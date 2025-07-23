@@ -43,28 +43,10 @@
   <!-- Hero Section -->
   <Hero />
 
-  <!-- Code Animation Section -->
-  <section class="py-16 px-6 lg:px-8 bg-gray-900">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-          Watch AI slop transform into clean code
-        </h2>
-        <p class="text-xl text-gray-400">
-          Our developers turn messy AI-generated code into production-ready solutions
-        </p>
-      </div>
-      
-      <div class="max-w-3xl mx-auto">
-        <CodeAnimation />
-      </div>
-    </div>
-  </section>
-
   <!-- Feature Cards Section -->
-  <section class="py-12 px-6 lg:px-8 bg-gray-50">
+  <section class="relative py-12 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">How we help you escape AI platform lock-in</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature Card 1 - Replit -->
@@ -120,6 +102,24 @@
     </div>
   </section>
 
+  <!-- Code Animation Section -->
+  <section class="py-16 px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+          Watch AI slop transform into clean code
+        </h2>
+        <p class="text-xl text-gray-600">
+          Our developers turn messy AI-generated code into production-ready solutions
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <CodeAnimation />
+      </div>
+    </div>
+  </section>
+
   <!-- Client Logos -->
   <section class="py-10 px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
@@ -146,7 +146,7 @@
   <section class="py-20 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
           Why founders come to us
         </h2>
         <p class="text-xl text-gray-600">
@@ -220,13 +220,13 @@
   </section>
 
   <!-- Featured Developers Section -->
-  <section id="featured" class="py-20 px-6 lg:px-8 bg-gray-50">
+  <section id="featured" class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16">
         <span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mb-4 inline-block">
           Featured Developers
         </span>
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
           Top-rated developers who specialize in AI cleanup
         </h2>
         <p class="text-xl text-gray-600">
@@ -259,7 +259,7 @@
   <section id="how-it-works" class="py-20 px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
           How it works
         </h2>
         <p class="text-xl text-gray-600">
@@ -296,11 +296,11 @@
   </section>
 
   <!-- For Developers Section -->
-  <section id="for-developers" class="py-20 px-6 lg:px-8 bg-gray-50">
+  <section id="for-developers" class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
             For developers: Turn AI cleanup into steady income
           </h2>
           <p class="text-xl text-gray-600 mb-8">
@@ -360,7 +360,7 @@
   <!-- Final CTA -->
   <section class="py-20 px-6 lg:px-8 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6 tracking-tight">
         Find developers who can clean AI-generated code today
       </h2>
       
@@ -380,7 +380,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 px-6 lg:px-8 border-t border-gray-200 bg-gray-50">
+  <footer class="py-12 px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-b from-white to-gray-50">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
       <Logo size="small" />
       <div class="text-gray-500 text-sm">

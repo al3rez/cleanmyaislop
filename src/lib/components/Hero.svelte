@@ -28,7 +28,7 @@
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
       <div class="max-w-xl">
-        <h1 class="text-5xl lg:text-6xl font-medium text-white mb-8 leading-none text-balance">
+        <h1 class="text-5xl lg:text-6xl font-medium text-white mb-8 leading-none text-balance tracking-tight">
           Hire developers who can clean your AI slop <span class="text-emerald-400">(code)</span>
         </h1>
         

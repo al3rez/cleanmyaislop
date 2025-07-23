@@ -11,7 +11,7 @@
   const currentSize = sizes[size];
 </script>
 
-<div class="flex items-center gap-1.5">
+<div class="flex items-center gap-1">
   <img 
     src="/aislop.svg"
     alt="CleanAISlop logo"
@@ -21,8 +21,8 @@
   />
   
   {#if showText}
-    <div class="{currentSize.text} font-light tracking-normal text-black">
-      cleanmy<span class="font-mono -mx-0.5">ai</span>slop
+    <div class="{currentSize.text} tracking-tight text-black">
+      <span class="text-emerald-600">clean</span>myaislop
     </div>
   {/if}
 </div>

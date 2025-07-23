@@ -99,9 +99,9 @@
   });
 </script>
 
-<div class="relative w-full h-full">
+<div class="relative w-full min-h-[400px]" style="will-change: contents;">
   <!-- Terminal window -->
-  <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
+  <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden" style="will-change: transform;">
     <!-- Terminal header -->
     <div class="bg-gray-800 px-4 py-2 flex items-center gap-2">
       <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -111,8 +111,8 @@
     </div>
     
     <!-- Code content -->
-    <div class="p-4 font-mono text-sm">
-      <div class="space-y-1">
+    <div class="p-4 font-mono text-sm h-[350px] overflow-y-auto">
+      <div class="space-y-1" style="will-change: contents;">
         {#each codeLines as line, i}
           <div class="text-gray-300 whitespace-pre">
             {#if line.includes('// AI-generated mess')}
@@ -138,12 +138,12 @@
   </div>
   
   <!-- Floating indicators -->
-  <div class="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce">
+  <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
     AI Slop
   </div>
   
   {#if codeLines.length > 0 && codeLines[0].includes('Cleaned')}
-    <div class="absolute -bottom-4 -left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce">
+    <div class="absolute bottom-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
       Human Verified ✓
     </div>
   {/if}
