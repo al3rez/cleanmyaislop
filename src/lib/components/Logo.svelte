@@ -22,7 +22,7 @@
   
   {#if showText}
     <div class="{currentSize.text} font-light tracking-normal text-black">
-      clean<span class="font-mono -mx-0.5">ai</span>slop
+      cleanmy<span class="font-mono -mx-0.5">ai</span>slop
     </div>
   {/if}
 </div>

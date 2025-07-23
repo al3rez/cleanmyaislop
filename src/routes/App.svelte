@@ -1,6 +1,5 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte';
-  import ServiceCategories from '$lib/components/ServiceCategories.svelte';
   import DeveloperCard from '$lib/components/DeveloperCard.svelte';
   import Logo from '$lib/components/Logo.svelte';
   import { mockDevelopers } from '$lib/mockData';
@@ -23,7 +22,7 @@
 
 <div class="min-h-screen bg-white">
   <!-- Header -->
-  <header class="py-4 px-6 lg:px-8 border-b border-gray-200 bg-white">
+  <header class="py-3 px-6 lg:px-8 border-b border-gray-200 bg-white">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center">
         <Logo size="medium" />
@@ -43,8 +42,67 @@
   <!-- Hero Section -->
   <Hero />
 
-  <!-- Client Logos -->
+  <!-- Feature Cards Section -->
   <section class="py-12 px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">How we help you escape AI platform lock-in</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Feature Card 1 - Replit -->
+        <a href="/developers?platform=replit" class="group">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div class="flex items-center mb-4">
+              <img src="https://www.google.com/s2/favicons?domain=replit.com&sz=32" alt="Replit" class="h-8 w-8" />
+              <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Replit</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Take your app off Replit</h3>
+            <p class="text-gray-600 text-sm">Deploy to real hosting, add proper CI/CD, and escape the container limits</p>
+          </div>
+        </a>
+
+        <!-- Feature Card 2 - Lovable/v0 -->
+        <a href="/developers?platform=lovable" class="group">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div class="flex items-center mb-4">
+              <img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=32" alt="Lovable" class="h-8 w-8" />
+              <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Lovable/v0</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Polish the AI design</h3>
+            <p class="text-gray-600 text-sm">Professional UI/UX, consistent styling, and proper responsive design</p>
+          </div>
+        </a>
+
+        <!-- Feature Card 3 - Cursor -->
+        <a href="/developers?platform=cursor" class="group">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div class="flex items-center mb-4">
+              <img src="https://www.google.com/s2/favicons?domain=cursor.sh&sz=32" alt="Cursor" class="h-8 w-8" />
+              <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Cursor</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Optimize performance</h3>
+            <p class="text-gray-600 text-sm">Fix memory leaks, reduce bundle size, and implement proper caching</p>
+          </div>
+        </a>
+
+        <!-- Feature Card 4 - General -->
+        <a href="/developers" class="group">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div class="flex items-center mb-4">
+              <svg class="h-8 w-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">Clean Code</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Ship to production</h3>
+            <p class="text-gray-600 text-sm">Code reviews, tests, GitHub workflows, and proper documentation</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="py-10 px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">Trusted by teams at</p>
@@ -63,9 +121,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- Service Categories -->
-  <ServiceCategories />
 
 
   <!-- Common AI Code Problems Section -->
