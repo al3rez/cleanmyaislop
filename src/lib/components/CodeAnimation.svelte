@@ -7,65 +7,68 @@
   let isShowingMessy = true;
   
   const messyCode = [
-    '// AI-generated code with security issues',
-    'const API_KEY = "sk-1234567890abcdef";  // EXPOSED!',
-    'const DB_PASSWORD = "admin123";  // HARDCODED!',
+    '// AI-generated code problems:',
     '',
-    'function connectToDatabase() {',
-    '  // Hardcoded credentials - security risk!',
-    '  const connection = mysql.connect({',
-    '    host: "production.db.server.com",',
-    '    user: "root",',
-    '    password: "admin123",',
-    '    database: "prod_database"',
-    '  });',
-    '}',
+    '// 🚨 EXPOSED SECRET KEYS',
+    'STRIPE_KEY = "sk_live_1234567890"',
+    'DATABASE_PASSWORD = "admin123"',
+    'API_TOKEN = "secret_token_xyz"',
     '',
-    'app.get("/api/users/:id", (req, res) => {',
-    '  // SQL injection vulnerability!',
-    '  const query = `SELECT * FROM users WHERE id = ${req.params.id}`;',
-    '  db.query(query, (err, results) => {',
-    '    if (err) console.log(err);  // Exposing errors!',
-    '    res.json(results);',
-    '  });',
-    '});',
+    '// 🚨 SECURITY HOLE - Anyone can delete data!',
+    'when user visits: /delete-user/123',
+    '  → directly delete user 123',
+    '  → no permission check',
+    '  → no confirmation',
     '',
-    '// Hardcoded production values',
-    'const STRIPE_KEY = "pk_live_abcdef123456";',
-    'const SERVER_URL = "http://localhost:3000";  // Wrong URL!'
+    '// 🚨 SENDING PASSWORDS IN EMAILS',
+    'send_email_to_user:',
+    '  subject: "Your account"',
+    '  body: "Your password is: " + password',
+    '',
+    '// 🚨 NO ERROR HANDLING',
+    'process_payment:',
+    '  charge_credit_card()',
+    '  // What if payment fails?',
+    '  // Customer charged but no product!',
+    '',
+    '// 🚨 HARDCODED LIMITS',
+    'MAX_USERS = 100',
+    'SERVER = "localhost:3000"'
   ];
   
   const cleanCode = [
-    '// Secured by professional developer',
-    'import { config } from "dotenv";',
-    'config();',
+    '// Fixed by professional developer:',
     '',
-    '// Environment variables for security',
-    'const API_KEY = process.env.API_KEY;',
-    'const DB_CONFIG = {',
-    '  host: process.env.DB_HOST,',
-    '  user: process.env.DB_USER,',
-    '  password: process.env.DB_PASS,',
-    '  database: process.env.DB_NAME,',
-    '  ssl: { rejectUnauthorized: true }',
-    '};',
+    '// ✅ SECURE ENVIRONMENT VARIABLES',
+    'STRIPE_KEY = load_from_secure_vault()',
+    'DATABASE_PASSWORD = encrypted_env_variable',
+    'API_TOKEN = rotate_every_30_days()',
     '',
-    '// Protected against SQL injection',
-    'app.get("/api/users/:id", async (req, res) => {',
-    '  try {',
-    '    const userId = parseInt(req.params.id);',
-    '    if (isNaN(userId)) {',
-    '      return res.status(400).json({ error: "Invalid ID" });',
-    '    }',
-    '    ',
-    '    const query = "SELECT * FROM users WHERE id = ?";',
-    '    const [results] = await db.execute(query, [userId]);',
-    '    res.json(results);',
-    '  } catch (error) {',
-    '    logger.error("User fetch failed:", error);',
-    '    res.status(500).json({ error: "Server error" });',
-    '  }',
-    '});'
+    '// ✅ PROPER AUTHENTICATION',
+    'when user visits: /delete-user/123',
+    '  → check if user is logged in',
+    '  → verify user owns this account',
+    '  → require email confirmation',
+    '  → log this action for audit',
+    '',
+    '// ✅ SECURE PASSWORD HANDLING',
+    'send_email_to_user:',
+    '  → send password reset link',
+    '  → link expires in 1 hour',
+    '  → one-time use only',
+    '',
+    '// ✅ ROBUST ERROR HANDLING',
+    'process_payment:',
+    '  try:',
+    '    charge_credit_card()',
+    '    send_confirmation_email()',
+    '  if payment fails:',
+    '    refund_customer()',
+    '    notify_support_team()',
+    '',
+    '// ✅ SCALABLE CONFIGURATION',
+    'MAX_USERS = unlimited',
+    'SERVER = auto_scaling_cloud()'
   ];
   
   onMount(() => {
@@ -127,22 +130,24 @@
       <div class="space-y-1" style="will-change: contents;">
         {#each codeLines as line, i}
           <div class="text-gray-300 whitespace-pre">
-            {#if line.includes('// AI-generated') || line.includes('// Secured by')}
+            {#if line.includes('// AI-generated') || line.includes('// Fixed by')}
               <span class="text-emerald-400 font-semibold">{line}</span>
-            {:else if line.includes('EXPOSED!') || line.includes('HARDCODED!') || line.includes('security risk!') || line.includes('vulnerability!')}
-              <span class="text-red-500 font-bold bg-red-900/30">{line}</span>
-            {:else if line.includes('sk-') || line.includes('pk_live_') || line.includes('admin123') || line.includes('"root"')}
-              <span class="text-red-400 bg-red-900/20">{line}</span>
-            {:else if line.includes('process.env') || line.includes('Environment variables')}
-              <span class="text-green-400">{line}</span>
-            {:else if line.includes('console.log')}
-              <span class="text-orange-400">{line}</span>
-            {:else if line.includes('const ') || line.includes('function') || line.includes('import') || line.includes('async')}
+            {:else if line.includes('🚨')}
+              <span class="text-red-400 font-bold">{line}</span>
+            {:else if line.includes('✅')}
+              <span class="text-emerald-400 font-bold">{line}</span>
+            {:else if line.includes('sk_live_') || line.includes('admin123') || line.includes('secret_token')}
+              <span class="text-red-300 bg-red-900/30">{line}</span>
+            {:else if line.includes('What if') || line.includes('Customer charged')}
+              <span class="text-orange-300 italic">{line}</span>
+            {:else if line.includes('→')}
+              <span class="text-gray-400">{line}</span>
+            {:else if line.includes('when user') || line.includes('send_email') || line.includes('process_payment')}
               <span class="text-blue-400">{line}</span>
-            {:else if line.includes('try') || line.includes('catch') || line.includes('throw')}
+            {:else if line.includes('try:') || line.includes('if payment fails:')}
               <span class="text-purple-400">{line}</span>
-            {:else if line.includes('${req.params.id}')}
-              <span class="text-red-500 bg-red-900/30 font-bold">{line}</span>
+            {:else if line.includes('load_from_secure_vault') || line.includes('encrypted_env_variable') || line.includes('auto_scaling_cloud')}
+              <span class="text-green-400">{line}</span>
             {:else}
               {line}
             {/if}

@@ -46,7 +46,7 @@
   <!-- Feature Cards Section -->
   <section class="relative py-12 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature Card 1 - Replit -->
@@ -105,17 +105,53 @@
   <!-- Code Animation Section -->
   <section class="py-16 px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          Watch AI slop transform into clean code
-        </h2>
-        <p class="text-xl text-gray-600">
-          Our developers turn messy AI-generated code into production-ready solutions
-        </p>
-      </div>
-      
-      <div class="max-w-3xl mx-auto">
-        <CodeAnimation />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left column - Text -->
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+            Before someone tweets your exposed API keys
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            We fix AI slop before hackers access your waitlist, steal your OpenAI keys, or your site becomes a viral coding fail
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-sm">⚠️</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Security vulnerabilities</h3>
+                <p class="text-gray-600">AI exposes API keys, passwords, and creates SQL injection risks</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-orange-600 text-sm">🐛</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">No error handling</h3>
+                <p class="text-gray-600">Payment failures, data loss, and crashes in production</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-emerald-600 text-sm">✓</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Professional fixes</h3>
+                <p class="text-gray-600">Secure, scalable, and properly tested code</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right column - Animation -->
+        <div>
+          <CodeAnimation />
+        </div>
       </div>
     </div>
   </section>
