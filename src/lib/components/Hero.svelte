@@ -1,4 +1,6 @@
 <script lang="ts">
+  import CodeAnimation from './CodeAnimation.svelte';
+  
   let searchTerm = $state('');
   let activeTab: 'find' | 'browse' = $state('find');
 
@@ -27,10 +29,12 @@
     
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-      <div class="max-w-xl">
-        <h1 class="text-5xl lg:text-6xl font-medium text-white mb-8 leading-none text-balance">
-          Hire developers who can clean your AI slop <span class="text-emerald-400">(code)</span>
-        </h1>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left side - Text and Search -->
+        <div>
+          <h1 class="text-5xl lg:text-6xl font-medium text-white mb-8 leading-none text-balance">
+            Hire developers who can clean your AI slop <span class="text-emerald-400">(code)</span>
+          </h1>
         
         <!-- Search Box -->
         <div class="bg-gray-800/60 backdrop-blur-md rounded-2xl p-8 border border-gray-700/50">
@@ -87,6 +91,11 @@
               <img src="https://www.google.com/s2/favicons?domain=github.com&sz=32" alt="GitHub" class="h-6 w-6" />
             </div>
           </div>
+        </div>
+        
+        <!-- Right side - Code Animation -->
+        <div class="hidden lg:block">
+          <CodeAnimation />
         </div>
       </div>
     </div>
