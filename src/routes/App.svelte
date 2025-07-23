@@ -2,6 +2,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import DeveloperCard from '$lib/components/DeveloperCard.svelte';
   import Logo from '$lib/components/Logo.svelte';
+  import CodeAnimation from '$lib/components/CodeAnimation.svelte';
   import { mockDevelopers } from '$lib/mockData';
   
   // Get featured developers
@@ -41,6 +42,24 @@
 
   <!-- Hero Section -->
   <Hero />
+
+  <!-- Code Animation Section -->
+  <section class="py-16 px-6 lg:px-8 bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+          Watch AI slop transform into clean code
+        </h2>
+        <p class="text-xl text-gray-400">
+          Our developers turn messy AI-generated code into production-ready solutions
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <CodeAnimation />
+      </div>
+    </div>
+  </section>
 
   <!-- Feature Cards Section -->
   <section class="py-12 px-6 lg:px-8 bg-gray-50">
