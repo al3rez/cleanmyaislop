@@ -4,61 +4,73 @@
   let codeLines: string[] = [];
   let currentLineIndex = 0;
   let showCursor = true;
+  let isShowingMessy = true;
   
   const messyCode = [
-    '// AI-generated mess',
-    'function getData() {',
-    '  var data = [];',
-    '  for (var i = 0; i < 100; i++) {',
-    '    data.push(Math.random());',
-    '    data.push(Math.random());',
-    '    data.push(Math.random());',
-    '  }',
-    '  return data;',
+    '// AI-generated code with security issues',
+    'const API_KEY = "sk-1234567890abcdef";  // EXPOSED!',
+    'const DB_PASSWORD = "admin123";  // HARDCODED!',
+    '',
+    'function connectToDatabase() {',
+    '  // Hardcoded credentials - security risk!',
+    '  const connection = mysql.connect({',
+    '    host: "production.db.server.com",',
+    '    user: "root",',
+    '    password: "admin123",',
+    '    database: "prod_database"',
+    '  });',
     '}',
     '',
-    '// TODO: fix this later',
-    'async function processData(data) {',
-    '  let result = null;',
-    '  await fetch("/api/data")',
-    '    .then(res => res.json())',
-    '    .then(json => result = json)',
-    '    .catch(err => console.log(err));',
-    '  return result;',
-    '}'
+    'app.get("/api/users/:id", (req, res) => {',
+    '  // SQL injection vulnerability!',
+    '  const query = `SELECT * FROM users WHERE id = ${req.params.id}`;',
+    '  db.query(query, (err, results) => {',
+    '    if (err) console.log(err);  // Exposing errors!',
+    '    res.json(results);',
+    '  });',
+    '});',
+    '',
+    '// Hardcoded production values',
+    'const STRIPE_KEY = "pk_live_abcdef123456";',
+    'const SERVER_URL = "http://localhost:3000";  // Wrong URL!'
   ];
   
   const cleanCode = [
-    '// Cleaned by human developer',
-    'interface DataPoint {',
-    '  id: string;',
-    '  value: number;',
-    '  timestamp: Date;',
-    '}',
+    '// Secured by professional developer',
+    'import { config } from "dotenv";',
+    'config();',
     '',
-    'const generateData = (count: number): DataPoint[] => {',
-    '  return Array.from({ length: count }, (_, i) => ({',
-    '    id: crypto.randomUUID(),',
-    '    value: Math.random() * 100,',
-    '    timestamp: new Date()',
-    '  }));',
+    '// Environment variables for security',
+    'const API_KEY = process.env.API_KEY;',
+    'const DB_CONFIG = {',
+    '  host: process.env.DB_HOST,',
+    '  user: process.env.DB_USER,',
+    '  password: process.env.DB_PASS,',
+    '  database: process.env.DB_NAME,',
+    '  ssl: { rejectUnauthorized: true }',
     '};',
     '',
-    'const fetchData = async <T>(endpoint: string): Promise<T> => {',
+    '// Protected against SQL injection',
+    'app.get("/api/users/:id", async (req, res) => {',
     '  try {',
-    '    const response = await fetch(endpoint);',
-    '    if (!response.ok) throw new Error(`HTTP ${response.status}`);',
-    '    return await response.json();',
+    '    const userId = parseInt(req.params.id);',
+    '    if (isNaN(userId)) {',
+    '      return res.status(400).json({ error: "Invalid ID" });',
+    '    }',
+    '    ',
+    '    const query = "SELECT * FROM users WHERE id = ?";',
+    '    const [results] = await db.execute(query, [userId]);',
+    '    res.json(results);',
     '  } catch (error) {',
-    '    console.error("Data fetch failed:", error);',
-    '    throw error;',
+    '    logger.error("User fetch failed:", error);',
+    '    res.status(500).json({ error: "Server error" });',
     '  }',
-    '};'
+    '});'
   ];
   
   onMount(() => {
     // Start with messy code
-    let isShowingMessy = true;
+    isShowingMessy = true;
     codeLines = [];
     
     // Typewriter effect for adding lines
@@ -115,16 +127,22 @@
       <div class="space-y-1" style="will-change: contents;">
         {#each codeLines as line, i}
           <div class="text-gray-300 whitespace-pre">
-            {#if line.includes('// AI-generated mess')}
-              <span class="text-red-400">{line}</span>
-            {:else if line.includes('// Cleaned by human developer')}
-              <span class="text-emerald-400">{line}</span>
-            {:else if line.includes('TODO') || line.includes('var ') || line.includes('console.log')}
+            {#if line.includes('// AI-generated') || line.includes('// Secured by')}
+              <span class="text-emerald-400 font-semibold">{line}</span>
+            {:else if line.includes('EXPOSED!') || line.includes('HARDCODED!') || line.includes('security risk!') || line.includes('vulnerability!')}
+              <span class="text-red-500 font-bold bg-red-900/30">{line}</span>
+            {:else if line.includes('sk-') || line.includes('pk_live_') || line.includes('admin123') || line.includes('"root"')}
+              <span class="text-red-400 bg-red-900/20">{line}</span>
+            {:else if line.includes('process.env') || line.includes('Environment variables')}
+              <span class="text-green-400">{line}</span>
+            {:else if line.includes('console.log')}
               <span class="text-orange-400">{line}</span>
-            {:else if line.includes('interface') || line.includes('const ') || line.includes('async') || line.includes('function')}
+            {:else if line.includes('const ') || line.includes('function') || line.includes('import') || line.includes('async')}
               <span class="text-blue-400">{line}</span>
-            {:else if line.includes('return') || line.includes('throw')}
+            {:else if line.includes('try') || line.includes('catch') || line.includes('throw')}
               <span class="text-purple-400">{line}</span>
+            {:else if line.includes('${req.params.id}')}
+              <span class="text-red-500 bg-red-900/30 font-bold">{line}</span>
             {:else}
               {line}
             {/if}
@@ -138,11 +156,13 @@
   </div>
   
   <!-- Floating indicators -->
-  <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
-    AI Slop
-  </div>
+  {#if isShowingMessy && codeLines.length > 0}
+    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
+      AI Slop
+    </div>
+  {/if}
   
-  {#if codeLines.length > 0 && codeLines[0].includes('Cleaned')}
+  {#if !isShowingMessy && codeLines.length > 0}
     <div class="absolute bottom-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
       Human Verified ✓
     </div>

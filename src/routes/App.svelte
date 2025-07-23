@@ -51,7 +51,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature Card 1 - Replit -->
         <a href="/developers?platform=replit" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=replit.com&sz=32" alt="Replit" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Replit</span>
@@ -63,7 +63,7 @@
 
         <!-- Feature Card 2 - Lovable/v0 -->
         <a href="/developers?platform=lovable" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=32" alt="Lovable" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Lovable/v0</span>
@@ -75,7 +75,7 @@
 
         <!-- Feature Card 3 - Cursor -->
         <a href="/developers?platform=cursor" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=cursor.sh&sz=32" alt="Cursor" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Cursor</span>
@@ -87,7 +87,7 @@
 
         <!-- Feature Card 4 - General -->
         <a href="/developers" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
             <div class="flex items-center mb-4">
               <svg class="h-8 w-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
