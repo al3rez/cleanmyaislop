@@ -6,7 +6,7 @@
       </svg>`,
       title: 'Platform Migration',
       description: 'Move off Replit, Lovable, v0 to AWS, GCP, Vercel',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -14,7 +14,7 @@
       </svg>`,
       title: 'Code Refactoring',
       description: 'Fix render loops, state issues, dead code',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -22,7 +22,7 @@
       </svg>`,
       title: 'Testing & QA',
       description: 'Add tests to AI-generated code',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@
       </svg>`,
       title: 'Performance Optimization',
       description: 'Make AI code production-ready',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@
       </svg>`,
       title: 'Scaling & DevOps',
       description: 'Deploy and scale AI-built apps',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@
       </svg>`,
       title: 'Architecture Review',
       description: 'Fix over-engineered AI patterns',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
       </svg>`,
       title: 'Complete Rewrite',
       description: 'When fixing takes longer than starting over',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     },
     {
       icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@
       </svg>`,
       title: 'Maintenance & Support',
       description: 'Ongoing fixes for AI-generated code',
-      color: 'text-green-600'
+      color: 'text-emerald-600'
     }
   ];
 </script>
@@ -81,7 +81,7 @@
           <div class="{category.color} mb-4 transition-transform group-hover:scale-110">
             {@html category.icon}
           </div>
-          <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+          <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
             {category.title}
           </h3>
           <p class="text-sm text-gray-600">
@@ -92,7 +92,7 @@
     </div>
     
     <div class="mt-12 text-center">
-      <a href="/developers" class="text-green-600 hover:text-green-700 font-medium inline-flex items-center">
+      <a href="/developers" class="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center">
         Browse all developers
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

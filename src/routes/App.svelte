@@ -2,6 +2,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import ServiceCategories from '$lib/components/ServiceCategories.svelte';
   import DeveloperCard from '$lib/components/DeveloperCard.svelte';
+  import Logo from '$lib/components/Logo.svelte';
   import { mockDevelopers } from '$lib/mockData';
   
   // Get featured developers
@@ -9,58 +10,54 @@
   
   // Client logos
   const clientLogos = [
-    "Microsoft", "Airbnb", "GoDaddy", "Glassdoor", 
-    "Cisco", "Automatic", "Nasdaq", "P&G"
+    { name: "Microsoft", domain: "microsoft.com" },
+    { name: "Airbnb", domain: "airbnb.com" },
+    { name: "GoDaddy", domain: "godaddy.com" },
+    { name: "Glassdoor", domain: "glassdoor.com" },
+    { name: "Cisco", domain: "cisco.com" },
+    { name: "Automattic", domain: "automattic.com" },
+    { name: "Nasdaq", domain: "nasdaq.com" },
+    { name: "Meta", domain: "meta.com" }
   ];
 </script>
 
 <div class="min-h-screen bg-white">
   <!-- Header -->
-  <header class="py-8 px-6 lg:px-12">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <div class="flex items-center space-x-3">
-  <!-- Custom SVG Logo - Larger, no container -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="black" role="img" aria-label="CleanupMyAISlop icon mono" class="w-12 h-12 animate-pulse">
-    <title>CleanupMyAISlop icon mono</title>
-    <g transform="rotate(-15 32 32)">
-      <rect x="16" y="14" width="32" height="30" rx="6"/>
-      <circle cx="16" cy="29" r="5"/>
-      <line x1="44" y1="14" x2="48" y2="6" stroke="black" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="48" cy="6" r="3"/>
-      <!-- eye holes -->
-      <circle cx="28" cy="26" r="3.5" fill="white"/>
-      <circle cx="38" cy="26" r="3.5" fill="white"/>
-      <!-- mouth/drip hole - orange for throw up -->
-      <path d="M38 37c0 3-2 5-5 5h-2c-3 0-5 2-5 5v1h16v-3c0-3-2-5-4-8z" fill="#f97316"/>
-    </g>
-    <!-- pixel block - orange for slop -->
-    <rect x="43" y="46" width="6" height="6" rx="1" fill="#f97316"/>
-  </svg>
-  <div class="text-2xl font-medium text-gray-900">
-    CleanMyAISlop
-  </div>
-</div>
-    <nav class="hidden md:flex space-x-8 text-gray-600">
-      <a href="/developers" class="hover:text-gray-900 transition-colors">Browse Developers</a>
-      <a href="#how-it-works" class="hover:text-gray-900 transition-colors">How It Works</a>
-      <a href="#for-developers" class="hover:text-gray-900 transition-colors">For Developers</a>
-    </nav>
-  </div>
-</header>
+  <header class="py-4 px-6 lg:px-8 border-b border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <Logo size="medium" />
+        <nav class="hidden md:flex items-center space-x-8 ml-12">
+          <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find Talent</a>
+          <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How It Works</a>
+          <a href="#for-developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">For Developers</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="text-gray-700 hover:text-gray-900 font-medium">Log in</button>
+        <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Sign up</button>
+      </div>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <Hero />
 
   <!-- Client Logos -->
-  <section class="py-12 px-6 lg:px-12 bg-gray-50">
-    <div class="max-w-7xl mx-auto">
+  <section class="py-12 px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
       <div class="text-center mb-8">
-        <p class="text-sm text-gray-500 uppercase tracking-wider">Trusted by teams at</p>
+        <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">Trusted by teams at</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center">
-        {#each clientLogos as logo}
-          <div class="text-gray-400 text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity">
-            {logo}
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
+        {#each clientLogos as company}
+          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <img 
+              src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
+              alt="{company.name} logo" 
+              class="h-6 w-6"
+            />
+            <span class="text-gray-600 font-medium">{company.name}</span>
           </div>
         {/each}
       </div>
@@ -72,7 +69,7 @@
 
 
   <!-- Common AI Code Problems Section -->
-  <section class="py-20 px-6 lg:px-12">
+  <section class="py-20 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -126,8 +123,8 @@
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"/>
             </svg>
           </div>
@@ -149,10 +146,10 @@
   </section>
 
   <!-- Featured Developers Section -->
-  <section id="featured" class="py-20 px-6 lg:px-12">
+  <section id="featured" class="py-20 px-6 lg:px-8 bg-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16">
-        <span class="text-sm font-medium text-red-500 bg-red-50 px-3 py-1 rounded-full mb-4 inline-block">
+        <span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mb-4 inline-block">
           Featured Developers
         </span>
         <h2 class="text-4xl font-bold text-gray-900 mb-4">
@@ -173,7 +170,7 @@
       <div class="text-center">
         <a 
           href="/developers" 
-          class="inline-flex items-center text-red-600 hover:text-red-700 font-medium"
+          class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium"
         >
           View all developers
           <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -185,8 +182,8 @@
   </section>
 
   <!-- How It Works Section -->
-  <section id="how-it-works" class="py-20 px-6 lg:px-12">
-    <div class="max-w-6xl mx-auto">
+  <section id="how-it-works" class="py-20 px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
           How it works
@@ -198,24 +195,24 @@
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-green-600">1</span>
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl font-bold text-emerald-600">1</span>
           </div>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Post your project</h3>
           <p class="text-gray-600">Describe your AI code issues, platform (Replit, v0, Cursor), and budget</p>
         </div>
         
         <div class="text-center">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-green-600">2</span>
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl font-bold text-emerald-600">2</span>
           </div>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Get proposals</h3>
           <p class="text-gray-600">Receive quotes from verified developers who specialize in AI cleanup</p>
         </div>
         
         <div class="text-center">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-green-600">3</span>
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl font-bold text-emerald-600">3</span>
           </div>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Ship clean code</h3>
           <p class="text-gray-600">Work with your developer to transform AI slop into production-ready code</p>
@@ -225,8 +222,8 @@
   </section>
 
   <!-- For Developers Section -->
-  <section id="for-developers" class="py-20 px-6 lg:px-12 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
+  <section id="for-developers" class="py-20 px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -237,7 +234,7 @@
           </p>
           <ul class="space-y-4 mb-8">
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
               <div>
@@ -245,7 +242,7 @@
               </div>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
               <div>
@@ -253,7 +250,7 @@
               </div>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
               <div>
@@ -261,7 +258,7 @@
               </div>
             </li>
           </ul>
-          <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+          <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
             Apply to Join
           </button>
         </div>
@@ -287,10 +284,10 @@
 
 
   <!-- Final CTA -->
-  <section class="py-20 px-6 lg:px-12 bg-gradient-to-br from-green-600 to-green-700 text-white">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="py-20 px-6 lg:px-8 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white">
+    <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-6">
-        Find developers who can fix AI-generated code today
+        Find developers who can clean AI-generated code today
       </h2>
       
       <p class="text-xl mb-8 opacity-90">
@@ -298,10 +295,10 @@
       </p>
       
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/developers" class="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+        <a href="/developers" class="bg-white text-emerald-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
           Browse Developers
         </a>
-        <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+        <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
           Apply as Developer
         </button>
       </div>
@@ -309,32 +306,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 px-6 lg:px-12 border-t border-gray-100">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <div class="flex items-center space-x-3">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="black" role="img" aria-label="CleanupMyAISlop icon mono" class="w-10 h-10">
-    <title>CleanupMyAISlop icon mono</title>
-    <g transform="rotate(-15 32 32)">
-      <rect x="16" y="14" width="32" height="30" rx="6"/>
-      <circle cx="16" cy="29" r="5"/>
-      <line x1="44" y1="14" x2="48" y2="6" stroke="black" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="48" cy="6" r="3"/>
-      <!-- eye holes -->
-      <circle cx="28" cy="26" r="3.5" fill="white"/>
-      <circle cx="38" cy="26" r="3.5" fill="white"/>
-      <!-- mouth/drip hole - orange for throw up -->
-      <path d="M38 37c0 3-2 5-5 5h-2c-3 0-5 2-5 5v1h16v-3c0-3-2-5-4-8z" fill="#f97316"/>
-    </g>
-    <!-- pixel block - orange for slop -->
-    <rect x="43" y="46" width="6" height="6" rx="1" fill="#f97316"/>
-  </svg>
-  <div class="text-xl font-medium text-gray-900">
-    CleanMyAISlop
-  </div>
-</div>
-    <div class="text-gray-500">
-      © 2025 We fix what AI breaks.
+  <footer class="py-12 px-6 lg:px-8 border-t border-gray-200 bg-gray-50">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <Logo size="small" />
+      <div class="text-gray-500 text-sm">
+        © 2025 CleanAISlop. We clean what AI breaks.
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </div>
