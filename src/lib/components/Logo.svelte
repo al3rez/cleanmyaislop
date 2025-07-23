@@ -1,4 +1,6 @@
 <script lang="ts">
+  import aislopSvg from '$lib/assets/aislop.svg?raw';
+  
   export let size: 'small' | 'medium' | 'large' = 'medium';
   export let showText = true;
   
@@ -12,17 +14,15 @@
 </script>
 
 <div class="flex items-center gap-1">
-  <img 
-    src="/aislop.svg"
-    alt="CleanAISlop logo"
-    width={currentSize.icon}
-    height={currentSize.icon}
-    class="{size === 'small' ? 'h-8' : size === 'medium' ? 'h-10' : 'h-12'}"
-  />
+  <div 
+    class="{size === 'small' ? 'h-8 w-8' : size === 'medium' ? 'h-10 w-10' : 'h-12 w-12'}"
+  >
+    {@html aislopSvg}
+  </div>
   
   {#if showText}
-    <div class="{currentSize.text} tracking-tight text-black">
-      <span class="text-emerald-600">clean</span>myaislop
+    <div class="{currentSize.text} font-medium tracking-tight text-black">
+      <span class="text-emerald-600">clean</span>my<span class="">ai</span>slop
     </div>
   {/if}
 </div>

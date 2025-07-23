@@ -17,7 +17,7 @@
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img 
-        src="/954929.jpg" 
+        src="/chatgpt.png" 
         alt="Developer working on code" 
         class="w-full h-full object-cover"
       />
