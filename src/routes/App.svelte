@@ -100,12 +100,13 @@
       </div>
       
       <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-        Find developers who fix AI-generated code
+        "The cognitive load of parsing AI code is brutal"
       </h1>
       
       <p class="text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl">
-        Connect with experienced developers who specialize in cleaning up AI slop. 
-        From 60k-line nightmares to clean, maintainable code. Browse profiles, compare rates, hire with confidence.
+        When your React component has inconsistent states, unused props, and weird render loops. 
+        When it looks good at first but is "insidiously flawed". When fixing it takes longer than writing from scratch.
+        <span class="font-semibold text-gray-900">We connect you with devs who actually know how to fix AI slop.</span>
       </p>
       
       <div class="flex gap-4">
@@ -182,31 +183,92 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <blockquote class="bg-white p-8 rounded-xl">
           <p class="text-lg text-gray-700 italic mb-4">
-            "50-60k lines of code. Insane. How do you expect someone to review this"
+            "The code was very nicely formatted and looked pretty well written until you understood what they wanted"
           </p>
-          <footer class="text-gray-500 text-sm">— Developer on Reddit</footer>
+          <footer class="text-gray-500 text-sm">— r/devops developer who charged "a fuckload" to fix it</footer>
         </blockquote>
         
         <blockquote class="bg-white p-8 rounded-xl">
           <p class="text-lg text-gray-700 italic mb-4">
-            "I feel hiring an expert might actually take less time than with AI"
+            "The cognitive load of parsing through code that's 80% correct is honestly harder than writing it from scratch"
           </p>
-          <footer class="text-gray-500 text-sm">— Founder with 60k lines of AI code</footer>
+          <footer class="text-gray-500 text-sm">— Developer dealing with AI-generated modules</footer>
         </blockquote>
         
         <blockquote class="bg-white p-8 rounded-xl">
           <p class="text-lg text-gray-700 italic mb-4">
-            "Step 1) Start again"
+            "Enabling everyone to mass produce low quality spaghetti code at rates never before imagined"
           </p>
-          <footer class="text-gray-500 text-sm">— Top-voted developer advice</footer>
+          <footer class="text-gray-500 text-sm">— Senior engineer on the AI future</footer>
         </blockquote>
         
         <blockquote class="bg-white p-8 rounded-xl">
           <p class="text-lg text-gray-700 italic mb-4">
-            "I'd rather rewrite than de-scramble AI slop"
+            "AI generated code ranges from perfect to absolutely retarded, and the AI has no idea wtf it generates"
           </p>
-          <footer class="text-gray-500 text-sm">— Senior developer, 10+ years</footer>
+          <footer class="text-gray-500 text-sm">— r/devops reality check</footer>
         </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common AI Code Problems Section -->
+  <section class="py-20 px-6 lg:px-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-sm font-medium text-red-500 bg-red-50 px-3 py-1 rounded-full mb-4 inline-block">
+          What you're dealing with
+        </span>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          The AI code horror show we see every day
+        </h2>
+        <p class="text-xl text-gray-600">
+          Real issues from real codebases. Sound familiar?
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">🧩</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Inconsistent States</h3>
+          <p class="text-gray-600">React components with 15 different useState hooks that conflict with each other. State updates that race and break the UI.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">🔄</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Render Loops</h3>
+          <p class="text-gray-600">useEffect dependencies that trigger infinite re-renders. Components that update their own props in a circle.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">🎭</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Looks Good, Works Bad</h3>
+          <p class="text-gray-600">Beautifully formatted code that completely misses the business logic. Perfect syntax, wrong implementation.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">🏗️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Over-Architecture</h3>
+          <p class="text-gray-600">Simple CRUD app with 47 abstraction layers. Factories creating factories to make a button component.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">👻</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Phantom Functions</h3>
+          <p class="text-gray-600">API calls to endpoints that don't exist. Helper functions that reference libraries you've never installed.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl">
+          <div class="text-red-500 text-3xl mb-3">💀</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Dead Code Everywhere</h3>
+          <p class="text-gray-600">Unused props, imports, and entire modules. Variables declared but never referenced. Comments from a different codebase.</p>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-lg text-gray-700 font-medium">
+          "Code is written once, but read thousands of times" — and AI doesn't care about readability
+        </p>
       </div>
     </div>
   </section>
@@ -435,19 +497,19 @@
           <ul class="space-y-3 text-gray-700 mb-8">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              1-3 years experience
+              Fresh grads who get it
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Supervised by seniors
+              "I use AI daily so I know its BS"
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Bug fixes & simple features
+              Fix render loops & dead code
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              $500-5k projects
+              Won't judge your AI slop
             </li>
           </ul>
           
@@ -471,24 +533,24 @@
           <ul class="space-y-3 text-gray-700 mb-8">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              5-10 years experience
+              "I've seen this AI pattern 100 times"
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Complete refactoring
+              Turn 60k lines into 8k that works
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Architecture improvements
+              Fix your "insidiously flawed" code
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              $5k-50k projects
+              Charge "a fuckload" (worth it)
             </li>
           </ul>
           
           <p class="text-sm text-gray-600 text-center">
-            Perfect for: 50k+ line codebases, production apps
+            Perfect for: That React nightmare, timesheet disasters, "it worked in ChatGPT"
           </p>
         </div>
         
@@ -503,24 +565,24 @@
           <ul class="space-y-3 text-gray-700 mb-8">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              10+ years experience
+              "I wrote the docs AI trained on"
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Ex-FAANG engineers
+              Seen every LLM hallucination
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              Complete rebuilds
+              Rewrite > debug (always)
             </li>
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
-              $20k+ projects
+              Your team will understand it
             </li>
           </ul>
           
           <p class="text-sm text-gray-600 text-center">
-            Perfect for: Mission-critical apps, scale challenges
+            Perfect for: When your staff has "proof" the AI is wrong
           </p>
         </div>
       </div>
