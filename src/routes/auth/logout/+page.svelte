@@ -1,0 +1,1 @@
+<!-- This page is only used for the logout action, users won't see it -->

@@ -4,6 +4,9 @@
   import Logo from '$lib/components/Logo.svelte';
   import CodeAnimation from '$lib/components/CodeAnimation.svelte';
   import { mockDevelopers } from '$lib/mockData';
+  import { enhance } from '$app/forms';
+  
+  let { data } = $props();
   
   // Get featured developers
   const featuredDevelopers = mockDevelopers.filter(dev => dev.featured).slice(0, 3);
@@ -34,8 +37,16 @@
         </nav>
       </div>
       <div class="flex items-center gap-4">
-        <button class="text-gray-700 hover:text-gray-900 font-medium">Log in</button>
-        <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Sign up</button>
+        {#if data?.user}
+          <span class="text-gray-700 font-medium">Hi, {data.user.name}</span>
+          <a href="/dashboard" class="text-gray-700 hover:text-gray-900 font-medium">Dashboard</a>
+          <form method="POST" action="/auth/logout" use:enhance>
+            <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium">Log out</button>
+          </form>
+        {:else}
+          <a href="/auth/login" class="text-gray-700 hover:text-gray-900 font-medium">Log in</a>
+          <a href="/auth/register" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Sign up</a>
+        {/if}
       </div>
     </div>
   </header>
@@ -392,13 +403,23 @@
               </div>
             </li>
           </ul>
-          <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-            Apply to Join
-          </button>
+          {#if data?.user?.role === 'developer'}
+            <a href="/dashboard/developer" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+              Go to Dashboard
+            </a>
+          {:else}
+            <a href="/auth/register?role=developer" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+              Apply to Join
+            </a>
+          {/if}
         </div>
         <div class="bg-white p-8 rounded-2xl shadow-lg">
           <div class="flex items-center gap-4 mb-6">
-            <img src="/placeholder.svg?height=64&width=64" alt="Developer avatar" class="w-16 h-16 rounded-full" />
+            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center">
+              <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
             <div>
               <h3 class="font-semibold text-gray-900">Sarah Chen</h3>
               <p class="text-gray-600">Senior Full Stack Developer</p>
@@ -432,9 +453,11 @@
         <a href="/developers" class="bg-white text-emerald-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
           Browse Developers
         </a>
-        <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-          Apply as Developer
-        </button>
+        {#if !data?.user || data?.user?.role === 'client'}
+          <a href="/auth/register?role=developer" class="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+            Apply as Developer
+          </a>
+        {/if}
       </div>
     </div>
   </section>

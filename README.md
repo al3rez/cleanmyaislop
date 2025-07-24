@@ -1,38 +1,99 @@
-# sv
+# CleanupMyAISlop
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A marketplace connecting people with AI-generated code issues to developers who can fix them.
 
-## Creating a project
+## Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Node.js 18+ (managed via mise or nvm)
+- Docker and Docker Compose
+- npm
+
+## Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd cleanupmyaislop
+   ```
+
+2. **Set up the development environment**
+   ```bash
+   npm run dev:setup
+   ```
+   This will:
+   - Start PostgreSQL in Docker
+   - Install dependencies
+   - Create database tables
+   - Set up environment variables
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Visit the application**
+   - Main site: http://localhost:5173
+   - Database UI: `npm run db:studio` (opens Drizzle Studio)
+
+## Development Commands
+
+### Database
+- `npm run dev:db:start` - Start PostgreSQL container
+- `npm run dev:db:stop` - Stop PostgreSQL container
+- `npm run dev:db:reset` - Reset database (deletes all data!)
+- `npm run db:studio` - Open Drizzle Studio to view/edit data
+- `npm run db:push` - Apply schema changes to database
+- `npm run db:generate` - Generate migration files
+
+### Development
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run check` - Type check the codebase
+- `npm run format` - Format code with Prettier
+
+## Tech Stack
+
+- **Framework**: SvelteKit with Svelte 5
+- **Database**: PostgreSQL with Drizzle ORM
+- **Styling**: Tailwind CSS 4
+- **Authentication**: Custom session-based auth
+- **Deployment**: Vercel Edge Functions
+
+## Environment Variables
+
+Copy `.env.development` to `.env` for local development:
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+cp .env.development .env
 ```
 
-## Developing
+Required variables:
+- `DATABASE_URL` - PostgreSQL connection string
+- `AUTH_SECRET` - Secret for session encryption
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Database Schema
 
-```bash
-npm run dev
+The application includes:
+- **Users**: Clients and developers with role-based access
+- **Projects**: Job postings from clients
+- **Proposals**: Bids from developers
+- **Reviews**: Feedback system
+- **Developer Profiles**: Extended developer information
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Deployment
 
-## Building
+1. Set up a PostgreSQL database (Vercel Postgres, Supabase, or Neon)
+2. Set environment variables in Vercel
+3. Deploy via Vercel CLI or GitHub integration
 
-To create a production version of your app:
+## Troubleshooting
 
-```bash
-npm run build
-```
+### Docker Issues
+- Ensure Docker Desktop is running
+- Check ports: `lsof -i :5432` (PostgreSQL should not be in use)
+- View logs: `docker-compose logs postgres`
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Database Issues
+- Reset database: `npm run dev:db:reset`
+- Check connection: `docker-compose exec postgres psql -U postgres -d cleanupmyaislop`
