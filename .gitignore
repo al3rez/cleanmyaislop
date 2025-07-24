@@ -10,15 +10,15 @@ vite.config.js.timestamp-*
 /documentation/types.js
 .env
 .env.local
-.vercel_build_output
 .svelte-kit
 drizzle
 postgres_data
 .cloudflare
+.wrangler
+wrangler.toml
 .pnpm-debug.log
 .netlify
 .turbo
-.vercel
 .test-tmp
 symlink-from
 .idea/

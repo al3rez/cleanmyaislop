@@ -1,5 +1,4 @@
-import { hash, verify } from '@node-rs/argon2';
-import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from '@oslojs/encoding';
+import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase, encodeBase64 } from '@oslojs/encoding';
 import { sha256 } from '@oslojs/crypto/sha2';
 import { eq } from 'drizzle-orm';
 import { db } from './db';
@@ -80,22 +79,61 @@ export async function invalidateSession(sessionId: string): Promise<void> {
   await db.delete(sessions).where(eq(sessions.id, sessionId));
 }
 
+// Simple PBKDF2-based password hashing for Cloudflare Workers compatibility
+async function deriveKey(password: string, salt: Uint8Array): Promise<Uint8Array> {
+  const encoder = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw',
+    encoder.encode(password),
+    'PBKDF2',
+    false,
+    ['deriveBits']
+  );
+  
+  const derivedBits = await crypto.subtle.deriveBits(
+    {
+      name: 'PBKDF2',
+      salt: salt,
+      iterations: 100000,
+      hash: 'SHA-256'
+    },
+    keyMaterial,
+    256
+  );
+  
+  return new Uint8Array(derivedBits);
+}
+
 export async function hashPassword(password: string): Promise<string> {
-  return await hash(password, {
-    memoryCost: 19456,
-    timeCost: 2,
-    outputLen: 32,
-    parallelism: 1
-  });
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const hash = await deriveKey(password, salt);
+  
+  // Combine salt and hash
+  const combined = new Uint8Array(salt.length + hash.length);
+  combined.set(salt);
+  combined.set(hash, salt.length);
+  
+  return encodeBase64(combined);
 }
 
 export async function verifyPassword(hashedPassword: string, password: string): Promise<boolean> {
-  return await verify(hashedPassword, password, {
-    memoryCost: 19456,
-    timeCost: 2,
-    outputLen: 32,
-    parallelism: 1
-  });
+  try {
+    const combined = new Uint8Array(atob(hashedPassword).split('').map(c => c.charCodeAt(0)));
+    const salt = combined.slice(0, 16);
+    const hash = combined.slice(16);
+    
+    const testHash = await deriveKey(password, salt);
+    
+    // Constant-time comparison
+    if (hash.length !== testHash.length) return false;
+    let result = 0;
+    for (let i = 0; i < hash.length; i++) {
+      result |= hash[i] ^ testHash[i];
+    }
+    return result === 0;
+  } catch {
+    return false;
+  }
 }
 
 export function createSessionCookie(token: string): string {

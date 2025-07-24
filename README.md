@@ -58,7 +58,7 @@ A marketplace connecting people with AI-generated code issues to developers who 
 - **Database**: PostgreSQL with Drizzle ORM
 - **Styling**: Tailwind CSS 4
 - **Authentication**: Custom session-based auth
-- **Deployment**: Vercel Edge Functions
+- **Deployment**: Cloudflare Pages & Workers
 
 ## Environment Variables
 
@@ -83,9 +83,11 @@ The application includes:
 
 ## Deployment
 
-1. Set up a PostgreSQL database (Vercel Postgres, Supabase, or Neon)
-2. Set environment variables in Vercel
-3. Deploy via Vercel CLI or GitHub integration
+1. Set up a PostgreSQL database (Neon, Supabase, or Railway)
+2. Set environment variables in Cloudflare Pages dashboard
+3. Deploy via Wrangler CLI or GitHub integration
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
 ## Troubleshooting
 

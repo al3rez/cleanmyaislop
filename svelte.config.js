@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-vercel";
+import adapter from "@sveltejs/adapter-cloudflare";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -8,15 +8,13 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    // Deploy to Vercel with edge runtime for better performance
+    // Deploy to Cloudflare Pages
     adapter: adapter({
-      runtime: 'edge',
-      // Opt specific routes out of edge runtime if needed
-      // functions: {
-      //   '/api/heavy-computation': {
-      //     runtime: 'nodejs20.x'
-      //   }
-      // }
+      // Routes to exclude from static generation
+      routes: {
+        include: ['/*'],
+        exclude: ['<all>']
+      }
     }),
   },
 };

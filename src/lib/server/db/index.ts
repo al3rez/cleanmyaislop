@@ -1,9 +1,12 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import * as schema from './schema';
+import { dev } from '$app/environment';
 import { DATABASE_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
-const connectionString = DATABASE_URL;
+// In development use Vite env, in production use Cloudflare env
+const connectionString = dev ? DATABASE_URL : (env.DATABASE_URL || DATABASE_URL);
 
 // Configure connection pooling for production
 const connectionConfig = {

@@ -1,5 +1,5 @@
 {
-  "name": "base-sveltekit-app",
+  "name": "cleanupmyaislop",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -35,10 +35,9 @@
     "vite": "^6.2.6"
   },
   "dependencies": {
-    "@node-rs/argon2": "^2.0.2",
     "@oslojs/crypto": "^1.0.1",
     "@oslojs/encoding": "^1.1.0",
-    "@sveltejs/adapter-vercel": "^5.8.0",
+    "@sveltejs/adapter-cloudflare": "^7.1.1",
     "arctic": "^3.7.0",
     "dotenv": "^17.2.0",
     "drizzle-kit": "^0.31.4",
