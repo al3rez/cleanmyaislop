@@ -43,8 +43,52 @@
   <!-- Hero Section -->
   <Hero />
 
+  <!-- Client Logos Infinite Scroll -->
+  <section class="relative py-12 px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8">
+        <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">Founders we've rescued from AI chaos</p>
+      </div>
+      <div class="relative overflow-hidden">
+        <!-- Left blur gradient -->
+        <div class="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
+        
+        <!-- Right blur gradient -->
+        <div class="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
+        
+        <!-- Scrolling content -->
+        <div class="flex animate-scroll">
+          <div class="flex gap-12 pr-12">
+            {#each clientLogos as company}
+              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <img 
+                  src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
+                  alt="{company.name} logo" 
+                  class="h-8 w-8"
+                />
+                <span class="text-gray-700 font-medium text-lg">{company.name}</span>
+              </div>
+            {/each}
+          </div>
+          <div class="flex gap-12 pr-12">
+            {#each clientLogos as company}
+              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <img 
+                  src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
+                  alt="{company.name} logo" 
+                  class="h-8 w-8"
+                />
+                <span class="text-gray-700 font-medium text-lg">{company.name}</span>
+              </div>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Feature Cards Section -->
-  <section class="relative py-12 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
+  <section class="relative py-12 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/50 to-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
       
@@ -103,7 +147,7 @@
   </section>
 
   <!-- Code Animation Section -->
-  <section class="py-16 px-6 lg:px-8 bg-white">
+  <section class="relative py-16 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/30 to-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Left column - Text -->
@@ -156,30 +200,10 @@
     </div>
   </section>
 
-  <!-- Client Logos -->
-  <section class="py-10 px-6 lg:px-8 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-8">
-        <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">Trusted by teams at</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
-        {#each clientLogos as company}
-          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
-            <img 
-              src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
-              alt="{company.name} logo" 
-              class="h-6 w-6"
-            />
-            <span class="text-gray-600 font-medium">{company.name}</span>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </section>
 
 
   <!-- Common AI Code Problems Section -->
-  <section class="py-20 px-6 lg:px-8">
+  <section class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">

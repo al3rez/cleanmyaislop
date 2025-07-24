@@ -10,10 +10,10 @@
   }
 </script>
 
-<section class="relative py-8 lg:py-12">
+<section class="relative py-8 lg:py-12 bg-gradient-to-b from-white to-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <!-- Centered hero with background image -->
-    <div class="relative min-h-[600px] lg:min-h-[700px] overflow-hidden rounded-3xl">
+    <div class="relative min-h-[600px] lg:min-h-[700px] overflow-hidden rounded-3xl shadow-2xl">
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img 
