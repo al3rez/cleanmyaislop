@@ -44,7 +44,7 @@
   <Hero />
 
   <!-- Client Logos Infinite Scroll -->
-  <section class="relative py-12 px-6 lg:px-8">
+  <section class="relative px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">Founders we've rescued from AI chaos</p>
@@ -88,7 +88,7 @@
   </section>
 
   <!-- Feature Cards Section -->
-  <section class="relative py-12 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/50 to-white">
+  <section class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/50 to-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
       
@@ -147,7 +147,7 @@
   </section>
 
   <!-- Code Animation Section -->
-  <section class="relative py-16 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/30 to-gray-50">
+  <section class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/30 to-gray-50">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Left column - Text -->
@@ -440,7 +440,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-b from-white to-gray-50">
+  <footer class="py-20 px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-b from-white to-gray-50">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
       <Logo size="small" />
       <div class="text-gray-500 text-sm">
