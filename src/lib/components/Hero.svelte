@@ -89,12 +89,16 @@
                   <button
                     onclick={() => role = 'client'}
                     class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'client' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}" style="will-change: background-color, color;"
+                    plausible-event-name="Role+Toggle"
+                    plausible-event-props='{"role":"client"}'
                   >
                     I need developers
                   </button>
                   <button
                     onclick={() => role = 'developer'}
-                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'developer' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
+                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'developer' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}" style="will-change: background-color, color;"
+                    plausible-event-name="Role+Toggle"
+                    plausible-event-props='{"role":"developer"}'
                   >
                     I am a developer
                   </button>
@@ -115,6 +119,8 @@
                     type="submit"
                     disabled={isSubmitting}
                     class="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors cursor-pointer" style="will-change: background-color;"
+                    plausible-event-name="Waitlist+Submit"
+                    plausible-event-props={`{"role":"${role}"}`}
                   >
                     {#if isSubmitting}
                       <svg class="animate-spin h-4 md:h-5 w-4 md:w-5" fill="none" viewBox="0 0 24 24" style="will-change: transform;">

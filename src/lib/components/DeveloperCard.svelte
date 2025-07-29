@@ -102,6 +102,8 @@
     <a 
       href="/developers/{developer.id}" 
       class="flex-1 text-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
+      plausible-event-name="Developer+Profile+Click"
+      plausible-event-props={`{"developer_id":"${developer.id}","developer_name":"${developer.name}"}`}
     >
       View Profile
     </a>
