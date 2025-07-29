@@ -26,25 +26,28 @@
 
 <div class="min-h-screen bg-white">
   <!-- Header -->
-  <header class="py-3 px-6 lg:px-8 border-b border-gray-200 bg-white">
+  <header class="py-3 px-4 md:px-6 lg:px-8 border-b border-gray-200 bg-white">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center">
         <Logo size="medium" />
-        <nav class="hidden md:flex items-center space-x-8 ml-12">
+        <nav class="hidden lg:flex items-center space-x-8 ml-12">
           <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find Talent</a>
           <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How It Works</a>
           <a href="#for-developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">For Developers</a>
         </nav>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 md:gap-4">
         {#if data?.user}
-          <span class="text-gray-700 font-medium">Hi, {data.user.name}</span>
-          <a href="/dashboard" class="text-gray-700 hover:text-gray-900 font-medium">Dashboard</a>
+          <span class="hidden md:inline text-gray-700 font-medium">Hi, {data.user.name}</span>
+          <a href="/dashboard" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Dashboard</a>
           <form method="POST" action="/auth/logout" use:enhance>
-            <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium">Log out</button>
+            <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Log out</button>
           </form>
         {:else}
-          <a href="#hero" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Start fixing AI code now →</a>
+          <a href="#hero" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base">
+            <span class="hidden md:inline">Start fixing AI code now →</span>
+            <span class="md:hidden">Get Started</span>
+          </a>
         {/if}
       </div>
     </div>
