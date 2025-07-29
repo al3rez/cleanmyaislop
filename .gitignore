@@ -23,3 +23,5 @@ wrangler.toml
 symlink-from
 .idea/
 neon_db_creds
+.dev.vars
+.dev.vars.*
