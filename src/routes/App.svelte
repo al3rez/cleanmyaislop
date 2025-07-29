@@ -302,6 +302,79 @@
 
 
 
+  <!-- Last week on X section -->
+  <section class="relative py-8 md:py-12 px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left column - Text -->
+        <div class="order-2 lg:order-1">
+          <p class="text-sm text-gray-500 uppercase tracking-wider font-medium mb-2">Last week on X</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+            When "vibe coding" meets reality
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            Another founder learned the hard way: AI code without understanding is a ticking time bomb
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-sm">🚨</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Bypassed subscriptions</h3>
+                <p class="text-gray-600">Users accessing paid features without paying</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-sm">💸</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Maxed-out API keys</h3>
+                <p class="text-gray-600">Thousands in unexpected charges from exposed credentials</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-sm">💀</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Database corruption</h3>
+                <p class="text-gray-600">Production data compromised and business operations halted</p>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+              <p class="text-amber-800 text-sm italic">
+                "As you know, I'm not technical so this is taking me longer than usual to figure out."
+              </p>
+              <p class="text-amber-600 text-xs mt-1">— The founder, after the attack</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right column - Tweet Image -->
+        <div class="order-1 lg:order-2">
+          <div class="relative">
+            <div class="bg-black p-4 rounded-xl shadow-2xl">
+              <img 
+                src="https://nmn.gl/blog/assets/vibe-coding-security.webp" 
+                alt="Founder's tweet about SaaS being hacked due to AI-generated code"
+                class="w-full rounded-lg"
+              />
+            </div>
+            <div class="absolute -bottom-4 -right-4 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+              Don't be next
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="py-12 md:py-20 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
@@ -311,7 +384,7 @@
             Find developers who actually fix your AI slop
           </h2>
           <p class="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
-            From quick fixes to complete rebuilds
+            Before hackers find your exposed API keys
           </p>
           <button 
             onclick={() => document.getElementById('waitlist-email')?.focus()}
