@@ -78,21 +78,21 @@
               Before your AI deletes your production database
             </p>
         
-          <!-- Waitlist Box -->
-          <div class="bg-gray-800/60 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 min-h-[280px] md:min-h-[320px] flex flex-col justify-center">
+            <!-- Waitlist Box -->
+            <div class="bg-gray-800/60 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 min-h-[280px] md:min-h-[320px] flex flex-col justify-center">
             {#if !isSubmitted}
               <div class="w-full">
                 <!-- Toggle Tabs -->
                 <div class="flex rounded-full bg-gray-700/50 p-1 mb-4 md:mb-6">
                   <button
                     onclick={() => role = 'client'}
-                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all {role === 'client' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
+                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'client' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
                   >
                     I need developers
                   </button>
                   <button
                     onclick={() => role = 'developer'}
-                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all {role === 'developer' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
+                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'developer' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
                   >
                     I am a developer
                   </button>
@@ -112,7 +112,7 @@
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    class="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors"
+                    class="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors cursor-pointer"
                   >
                     {#if isSubmitting}
                       <svg class="animate-spin h-4 md:h-5 w-4 md:w-5" fill="none" viewBox="0 0 24 24">
@@ -189,6 +189,7 @@
                 <img src="https://www.google.com/s2/favicons?domain=github.com&sz=32" alt="GitHub" class="h-5 md:h-6 w-5 md:w-6" />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

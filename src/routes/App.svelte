@@ -61,7 +61,7 @@
             <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find developers</a>
             <a href="#how-we-help" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How it works</a>
             <a href="#why-founders" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Why CleanupMyAISlop</a>
-            <a href="/pricing" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
+            <button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 font-medium transition-colors cursor-pointer">Pricing</button>
           </nav>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
@@ -72,10 +72,17 @@
               <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Log out</button>
             </form>
           {:else}
-            <a href="/login" class="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors">Log in</a>
+            <button 
+              onclick={() => alert('Login coming soon! Join the waitlist to get notified.')}
+              class="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors relative group cursor-pointer">
+              Log in
+              <span class="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10 shadow-lg">
+                Coming soon
+              </span>
+            </button>
             <button 
               onclick={() => document.getElementById('waitlist-email')?.focus()}
-              class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base">
+              class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base cursor-pointer">
               <span class="hidden md:inline">Start fixing AI code now →</span>
               <span class="md:hidden">Get Started</span>
             </button>
@@ -372,11 +379,16 @@
               </div>
             </div>
 
-            <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-              <p class="text-amber-800 text-sm italic">
-                "As you know, I'm not technical so this is taking me longer than usual to figure out."
-              </p>
-              <p class="text-amber-600 text-xs mt-1">— The founder, after the attack</p>
+            <div class="mt-6 p-6 bg-gray-50 rounded-xl border border-gray-200">
+              <div class="flex items-start gap-3">
+                <div class="text-gray-400 text-2xl mt-1">"</div>
+                <div>
+                  <p class="text-gray-700 text-base leading-relaxed">
+                    As you know, I'm not technical so this is taking me longer than usual to figure out.
+                  </p>
+                  <p class="text-gray-500 text-sm mt-3 font-medium">— The founder, after the attack</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -413,7 +425,7 @@
           </p>
           <button 
             onclick={() => document.getElementById('waitlist-email')?.focus()}
-            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg">
+            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg cursor-pointer">
             <span class="hidden md:inline">Start fixing AI code now →</span>
             <span class="md:hidden">Get Started →</span>
           </button>
@@ -443,8 +455,10 @@
           <ul class="space-y-2 md:space-y-3">
             <li><a href="/developers" class="text-gray-600 hover:text-gray-900 text-sm">Browse Developers</a></li>
             <li><a href="#how-it-works" class="text-gray-600 hover:text-gray-900 text-sm">How It Works</a></li>
-            <li><a href="#pricing" class="text-gray-600 hover:text-gray-900 text-sm">Pricing</a></li>
-            <li><a href="/blog" class="text-gray-600 hover:text-gray-900 text-sm">Blog</a></li>
+            <li><button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 text-sm">Pricing</button></li>
+            <li><button onclick={() => alert('Blog coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 text-sm">Blog</button></li>
+            <li><a href="https://astromvp.com" target="_blank" rel="nofollow noopener" class="text-gray-600 hover:text-gray-900 text-sm">AstroMVP</a></li>
+            <li><a href="https://adworthy.ai" target="_blank" rel="nofollow noopener" class="text-gray-600 hover:text-gray-900 text-sm">Adworthy</a></li>
           </ul>
         </div>
         
@@ -452,10 +466,10 @@
         <div>
           <h3 class="font-semibold text-gray-900 text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">Legal</h3>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="/terms" class="text-gray-600 hover:text-gray-900 text-sm">Terms of Service</a></li>
-            <li><a href="/privacy" class="text-gray-600 hover:text-gray-900 text-sm">Privacy Policy</a></li>
-            <li><a href="/cookies" class="text-gray-600 hover:text-gray-900 text-sm">Cookie Policy</a></li>
-            <li><a href="/disclaimer" class="text-gray-600 hover:text-gray-900 text-sm">Disclaimer</a></li>
+            <li><button onclick={() => alert('Terms of Service coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Terms of Service</button></li>
+            <li><button onclick={() => alert('Privacy Policy coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Privacy Policy</button></li>
+            <li><button onclick={() => alert('Cookie Policy coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Cookie Policy</button></li>
+            <li><button onclick={() => alert('Disclaimer coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Disclaimer</button></li>
           </ul>
         </div>
         
@@ -463,10 +477,10 @@
         <div>
           <h3 class="font-semibold text-gray-900 text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">More</h3>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="/about" class="text-gray-600 hover:text-gray-900 text-sm">About Us</a></li>
-            <li><a href="/contact" class="text-gray-600 hover:text-gray-900 text-sm">Contact</a></li>
-            <li><a href="/faq" class="text-gray-600 hover:text-gray-900 text-sm">FAQ</a></li>
-            <li><a href="/careers" class="text-gray-600 hover:text-gray-900 text-sm">Careers</a></li>
+            <li><button onclick={() => alert('About Us coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">About Us</button></li>
+            <li><button onclick={() => alert('Contact page coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Contact</button></li>
+            <li><button onclick={() => alert('FAQ coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">FAQ</button></li>
+            <li><button onclick={() => alert('Careers page coming soon!')} class="text-gray-600 hover:text-gray-900 text-sm">Careers</button></li>
           </ul>
         </div>
       </div>

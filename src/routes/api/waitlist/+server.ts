@@ -10,38 +10,42 @@ const TURNSTILE_SECRET_KEY = env.TURNSTILE_SECRET_KEY || '';
 // Email validation regex - more strict than just checking for @
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-// Rate limiting map (in production, use Redis or similar)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
-const RATE_LIMIT_MAX_REQUESTS = 3; // 3 requests per 15 minutes
+// Sliding window rate limiting (in production, use Redis or similar)
+const rateLimitMap = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour sliding window
+const RATE_LIMIT_MAX_REQUESTS = 10; // 10 requests per hour
 
-// Clean old rate limit entries every 5 minutes
+// Clean old rate limit entries every 10 minutes
 setInterval(() => {
   const now = Date.now();
-  for (const [key, value] of rateLimitMap.entries()) {
-    if (value.resetTime < now) {
+  for (const [key, timestamps] of rateLimitMap.entries()) {
+    // Remove timestamps older than the window
+    const validTimestamps = timestamps.filter(ts => ts > now - RATE_LIMIT_WINDOW);
+    if (validTimestamps.length === 0) {
       rateLimitMap.delete(key);
+    } else {
+      rateLimitMap.set(key, validTimestamps);
     }
   }
-}, 5 * 60 * 1000);
+}, 10 * 60 * 1000);
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
-  const record = rateLimitMap.get(ip);
+  const timestamps = rateLimitMap.get(ip) || [];
   
-  if (!record || record.resetTime < now) {
-    rateLimitMap.set(ip, {
-      count: 1,
-      resetTime: now + RATE_LIMIT_WINDOW
-    });
-    return true;
-  }
+  // Remove old timestamps outside the sliding window
+  const validTimestamps = timestamps.filter(ts => ts > now - RATE_LIMIT_WINDOW);
   
-  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
+  // Check if under the limit
+  if (validTimestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+    // Update the map with cleaned timestamps
+    rateLimitMap.set(ip, validTimestamps);
     return false;
   }
   
-  record.count++;
+  // Add current timestamp and update
+  validTimestamps.push(now);
+  rateLimitMap.set(ip, validTimestamps);
   return true;
 }
 
