@@ -44,8 +44,7 @@
             <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium">Log out</button>
           </form>
         {:else}
-          <a href="/auth/login" class="text-gray-700 hover:text-gray-900 font-medium">Log in</a>
-          <a href="/auth/register" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Sign up</a>
+          <a href="#hero" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">Start fixing AI code now →</a>
         {/if}
       </div>
     </div>
@@ -289,184 +288,76 @@
     </div>
   </section>
 
-  <!-- Featured Developers Section -->
-  <section id="featured" class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="mb-16">
-        <span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mb-4 inline-block">
-          Featured Developers
-        </span>
-        <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          Top-rated developers who specialize in AI cleanup
-        </h2>
-        <p class="text-xl text-gray-600">
-          Verified experts with proven track records of rescuing founders from debugging hell
-        </p>
-      </div>
-      
-      <!-- Featured Developer Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {#each featuredDevelopers as developer}
-          <DeveloperCard {developer} />
-        {/each}
-      </div>
-      
-      <div class="text-center">
-        <a 
-          href="/developers" 
-          class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium"
-        >
-          View all developers
-          <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="py-20 px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          How it works
-        </h2>
-        <p class="text-xl text-gray-600">
-          Get your AI-generated code fixed in 3 simple steps
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-emerald-600">1</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Post your project</h3>
-          <p class="text-gray-600">Describe your AI code issues, platform (Replit, v0, Cursor), and budget</p>
-        </div>
-        
-        <div class="text-center">
-          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-emerald-600">2</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Get proposals</h3>
-          <p class="text-gray-600">Receive quotes from verified developers who specialize in AI cleanup</p>
-        </div>
-        
-        <div class="text-center">
-          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl font-bold text-emerald-600">3</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ship clean code</h3>
-          <p class="text-gray-600">Work with your developer to transform AI slop into production-ready code</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- For Developers Section -->
-  <section id="for-developers" class="relative py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-            For developers: Turn AI cleanup into steady income
-          </h2>
-          <p class="text-xl text-gray-600 mb-8">
-            Join the growing market of developers specializing in fixing AI-generated code. Set your own rates, choose your clients, and build your reputation.
-          </p>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <div>
-                <span class="font-semibold text-gray-900">Average $125/hour</span> for experienced AI cleanup specialists
-              </div>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <div>
-                <span class="font-semibold text-gray-900">Direct client relationships</span> - no middleman fees
-              </div>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <div>
-                <span class="font-semibold text-gray-900">Growing demand</span> as more startups use AI tools
-              </div>
-            </li>
-          </ul>
-          {#if data?.user?.role === 'developer'}
-            <a href="/dashboard/developer" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-              Go to Dashboard
-            </a>
-          {:else}
-            <a href="/auth/register?role=developer" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-              Apply to Join
-            </a>
-          {/if}
-        </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center">
-              <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-gray-900">Sarah Chen</h3>
-              <p class="text-gray-600">Senior Full Stack Developer</p>
-            </div>
-          </div>
-          <blockquote class="text-gray-700 italic mb-4">
-            "I've made over $40k in the last 3 months just fixing AI-generated React code. The demand is insane - founders are desperate for developers who can untangle the mess AI creates."
-          </blockquote>
-          <div class="flex items-center gap-6 text-sm">
-            <span class="text-gray-600">⭐ 4.9/5 rating</span>
-            <span class="text-gray-600">27 projects completed</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- Final CTA -->
-  <section class="py-20 px-6 lg:px-8 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6 tracking-tight">
-        Find developers who can clean AI-generated code today
-      </h2>
-      
-      <p class="text-xl mb-8 opacity-90">
-        Join thousands of founders who've successfully migrated off AI platforms
-      </p>
-      
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/developers" class="bg-white text-emerald-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-          Browse Developers
-        </a>
-        {#if !data?.user || data?.user?.role === 'client'}
-          <a href="/auth/register?role=developer" class="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-            Apply as Developer
+  <section class="py-20 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative min-h-[200px] overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl p-12 lg:p-16">
+        <div class="relative z-10 text-center">
+          <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6 tracking-tight whitespace-nowrap">
+            Find developers who actually fix your AI slop
+          </h2>
+          <p class="text-xl text-gray-300 mb-8">
+            From quick fixes to complete rebuilds
+          </p>
+          <a href="#hero" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105 shadow-lg">
+            Start fixing AI code now →
           </a>
-        {/if}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="py-20 px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-b from-white to-gray-50">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <Logo size="small" />
-      <div class="text-gray-500 text-sm">
-        © 2025 CleanAISlop. We clean what AI breaks.
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        <!-- Column 1: Logo & Description -->
+        <div>
+          <Logo size="small" />
+          <p class="text-gray-600 text-sm mt-4 mb-6">
+            Hire the best developers who clean up your AI slop
+          </p>
+          <p class="text-gray-500 text-xs">
+            © 2025 CleanAISlop. We clean what AI breaks.
+          </p>
+        </div>
+        
+        <!-- Column 2: LINKS -->
+        <div>
+          <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wider mb-4">Links</h3>
+          <ul class="space-y-3">
+            <li><a href="/developers" class="text-gray-600 hover:text-gray-900 text-sm">Browse Developers</a></li>
+            <li><a href="#how-it-works" class="text-gray-600 hover:text-gray-900 text-sm">How It Works</a></li>
+            <li><a href="#pricing" class="text-gray-600 hover:text-gray-900 text-sm">Pricing</a></li>
+            <li><a href="/blog" class="text-gray-600 hover:text-gray-900 text-sm">Blog</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: LEGAL -->
+        <div>
+          <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wider mb-4">Legal</h3>
+          <ul class="space-y-3">
+            <li><a href="/terms" class="text-gray-600 hover:text-gray-900 text-sm">Terms of Service</a></li>
+            <li><a href="/privacy" class="text-gray-600 hover:text-gray-900 text-sm">Privacy Policy</a></li>
+            <li><a href="/cookies" class="text-gray-600 hover:text-gray-900 text-sm">Cookie Policy</a></li>
+            <li><a href="/disclaimer" class="text-gray-600 hover:text-gray-900 text-sm">Disclaimer</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 4: MORE -->
+        <div>
+          <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wider mb-4">More</h3>
+          <ul class="space-y-3">
+            <li><a href="/about" class="text-gray-600 hover:text-gray-900 text-sm">About Us</a></li>
+            <li><a href="/contact" class="text-gray-600 hover:text-gray-900 text-sm">Contact</a></li>
+            <li><a href="/faq" class="text-gray-600 hover:text-gray-900 text-sm">FAQ</a></li>
+            <li><a href="/careers" class="text-gray-600 hover:text-gray-900 text-sm">Careers</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>

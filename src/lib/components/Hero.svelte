@@ -38,8 +38,8 @@
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
       <div class="max-w-xl">
-        <h1 class="text-5xl lg:text-6xl font-medium text-white mb-6 leading-none text-balance tracking-tight">
-          Hire developers who clean up your <span class="text-emerald-400">AI slop</span>
+        <h1 class="text-5xl lg:text-6xl font-medium text-white mb-6 leading-none text-pretty tracking-tight">
+          Hire the best developers who clean up your <span class="text-emerald-400">AI slop</span>
         </h1>
         <p class="text-xl text-gray-300 mb-8">
           Join 500+ founders who escaped AI code disasters
@@ -86,7 +86,7 @@
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                 {:else}
-                  Join Waitlist
+                  Start fixing AI code now →
                 {/if}
               </button>
             </form>
