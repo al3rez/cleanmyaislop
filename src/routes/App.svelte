@@ -5,6 +5,7 @@
   import CodeAnimation from '$lib/components/CodeAnimation.svelte';
   import { mockDevelopers } from '$lib/mockData';
   import { enhance } from '$app/forms';
+  import { onMount } from 'svelte';
   
   let { data } = $props();
   
@@ -22,6 +23,26 @@
     { name: "Nasdaq", domain: "nasdaq.com" },
     { name: "Meta", domain: "meta.com" }
   ];
+
+  // Smooth scrolling for anchor links
+  onMount(() => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 80; // Account for sticky header
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
 </script>
 
 <div class="min-h-screen bg-white">
@@ -36,11 +57,14 @@
           <div class="hidden md:block">
             <Logo size="medium" />
           </div>
-          <nav class="hidden lg:flex items-center space-x-8 ml-12">
-            <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Developer Directory</a>
+          <nav class="hidden lg:flex items-center space-x-7 ml-12">
+            <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find developers</a>
+            <a href="#how-we-help" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How it works</a>
+            <a href="#why-founders" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Why CleanupMyAISlop</a>
+            <a href="/pricing" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
           </nav>
         </div>
-        <div class="flex items-center gap-2 md:gap-4">
+        <div class="flex items-center gap-4 md:gap-6">
           {#if data?.user}
             <span class="hidden md:inline text-gray-700 font-medium">Hi, {data.user.name}</span>
             <a href="/dashboard" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Dashboard</a>
@@ -48,6 +72,7 @@
               <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Log out</button>
             </form>
           {:else}
+            <a href="/login" class="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors">Log in</a>
             <button 
               onclick={() => document.getElementById('waitlist-email')?.focus()}
               class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base">
@@ -108,7 +133,7 @@
   </section>
 
   <!-- Feature Cards Section -->
-  <section class="relative py-12 md:py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/50 to-white">
+  <section id="how-we-help" class="relative py-12 md:py-20 px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50/50 to-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 tracking-tight">How we help you escape AI platform lock-in</h2>
       
@@ -223,7 +248,7 @@
 
 
   <!-- Common AI Code Problems Section -->
-  <section class="relative py-12 md:py-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+  <section id="why-founders" class="relative py-12 md:py-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
