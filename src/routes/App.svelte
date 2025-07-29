@@ -61,7 +61,7 @@
             <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find developers</a>
             <a href="#how-we-help" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How it works</a>
             <a href="#why-founders" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Why CleanupMyAISlop</a>
-            <button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 font-medium transition-colors cursor-pointer" style="will-change: color;" plausible-event-name="Navigation+Click" plausible-event-props='{"link":"pricing"}'>Pricing</button>
+            <button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 font-medium transition-colors cursor-pointer" style="will-change: color;" plausible-event-name="Navigation+Click" data-plausible-event-link="pricing">Pricing</button>
           </nav>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
@@ -76,7 +76,7 @@
               onclick={() => alert('Login coming soon! Join the waitlist to get notified.')}
               class="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors relative group cursor-pointer"
               plausible-event-name="Navigation+Click"
-              plausible-event-props='{"link":"login"}'>
+              data-plausible-event-link="login">
               Log in
               <span class="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10 shadow-lg" style="will-change: opacity;">
                 Coming soon
@@ -86,7 +86,7 @@
               onclick={() => document.getElementById('waitlist-email')?.focus()}
               class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base cursor-pointer"
               plausible-event-name="CTA+Click"
-              plausible-event-props='{"location":"header","text":"Start fixing AI code now"}'>
+              data-plausible-event-location="header" data-plausible-event-text="Start fixing AI code now">
               <span class="hidden md:inline">Start fixing AI code now →</span>
               <span class="md:hidden">Get Started</span>
             </button>
@@ -150,7 +150,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature Card 1 - Replit -->
-        <a href="/developers?platform=replit" class="group" plausible-event-name="Feature+Card+Click" plausible-event-props='{"platform":"replit"}'>
+        <a href="/developers?platform=replit" class="group" plausible-event-name="Feature+Card+Click" data-plausible-event-platform="replit">
           <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=replit.com&sz=32" alt="Replit" class="h-8 w-8" />
@@ -162,7 +162,7 @@
         </a>
 
         <!-- Feature Card 2 - Lovable/v0 -->
-        <a href="/developers?platform=lovable" class="group" plausible-event-name="Feature+Card+Click" plausible-event-props='{"platform":"lovable"}'>
+        <a href="/developers?platform=lovable" class="group" plausible-event-name="Feature+Card+Click" data-plausible-event-platform="lovable">
           <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=32" alt="Lovable" class="h-8 w-8" />
@@ -174,7 +174,7 @@
         </a>
 
         <!-- Feature Card 3 - Cursor -->
-        <a href="/developers?platform=cursor" class="group" plausible-event-name="Feature+Card+Click" plausible-event-props='{"platform":"cursor"}'>
+        <a href="/developers?platform=cursor" class="group" plausible-event-name="Feature+Card+Click" data-plausible-event-platform="cursor">
           <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=cursor.sh&sz=32" alt="Cursor" class="h-8 w-8" />
@@ -186,7 +186,7 @@
         </a>
 
         <!-- Feature Card 4 - General -->
-        <a href="/developers" class="group" plausible-event-name="Feature+Card+Click" plausible-event-props='{"platform":"general"}'>
+        <a href="/developers" class="group" plausible-event-name="Feature+Card+Click" data-plausible-event-platform="general">
           <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <svg class="h-8 w-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -431,7 +431,7 @@
             onclick={() => document.getElementById('waitlist-email')?.focus()}
             class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg cursor-pointer" style="will-change: transform, background-color;"
             plausible-event-name="CTA+Click"
-            plausible-event-props='{"location":"final_cta","text":"Start fixing AI code now"}'>
+            data-plausible-event-location="final_cta" data-plausible-event-text="Start fixing AI code now">
             <span class="hidden md:inline">Start fixing AI code now →</span>
             <span class="md:hidden">Get Started →</span>
           </button>
