@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, varchar, boolean, integer, decimal, pgEnum } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, timestamp, varchar, boolean, integer, decimal, pgEnum, unique } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // Enums
@@ -16,6 +16,11 @@ export const waitlist = pgTable('waitlist', {
   ipAddress: varchar('ip_address', { length: 45 }),
   userAgent: text('user_agent'),
   referrer: varchar('referrer', { length: 512 })
+}, (table) => {
+  return {
+    // Ensure same email can't sign up as both client and developer
+    emailRoleUnique: unique().on(table.email, table.role)
+  };
 });
 
 // Users table
