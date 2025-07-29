@@ -61,7 +61,7 @@
             <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find developers</a>
             <a href="#how-we-help" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How it works</a>
             <a href="#why-founders" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Why CleanupMyAISlop</a>
-            <button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 font-medium transition-colors cursor-pointer">Pricing</button>
+            <button onclick={() => alert('Pricing coming soon! Join the waitlist to get notified.')} class="text-gray-600 hover:text-gray-900 font-medium transition-colors cursor-pointer" style="will-change: color;">Pricing</button>
           </nav>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
@@ -76,7 +76,7 @@
               onclick={() => alert('Login coming soon! Join the waitlist to get notified.')}
               class="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors relative group cursor-pointer">
               Log in
-              <span class="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10 shadow-lg">
+              <span class="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10 shadow-lg" style="will-change: opacity;">
                 Coming soon
               </span>
             </button>
@@ -109,10 +109,10 @@
         <div class="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
         
         <!-- Scrolling content -->
-        <div class="flex animate-scroll">
+        <div class="flex animate-scroll" style="will-change: transform;">
           <div class="flex gap-12 pr-12">
             {#each clientLogos as company}
-              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap">
+              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap" style="will-change: opacity;">
                 <img 
                   src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
                   alt="{company.name} logo" 
@@ -124,7 +124,7 @@
           </div>
           <div class="flex gap-12 pr-12">
             {#each clientLogos as company}
-              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap">
+              <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap" style="will-change: opacity;">
                 <img 
                   src="https://www.google.com/s2/favicons?domain={company.domain}&sz=32" 
                   alt="{company.name} logo" 
@@ -147,7 +147,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature Card 1 - Replit -->
         <a href="/developers?platform=replit" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=replit.com&sz=32" alt="Replit" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Replit</span>
@@ -159,7 +159,7 @@
 
         <!-- Feature Card 2 - Lovable/v0 -->
         <a href="/developers?platform=lovable" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=32" alt="Lovable" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Lovable/v0</span>
@@ -171,7 +171,7 @@
 
         <!-- Feature Card 3 - Cursor -->
         <a href="/developers?platform=cursor" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <img src="https://www.google.com/s2/favicons?domain=cursor.sh&sz=32" alt="Cursor" class="h-8 w-8" />
               <span class="ml-2 text-xs font-medium text-gray-500 uppercase tracking-wider">From Cursor</span>
@@ -183,7 +183,7 @@
 
         <!-- Feature Card 4 - General -->
         <a href="/developers" class="group">
-          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1">
+          <div class="bg-white rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all transform hover:-translate-y-1" style="will-change: transform, box-shadow;">
             <div class="flex items-center mb-4">
               <svg class="h-8 w-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -267,7 +267,7 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🔄</span>
@@ -277,7 +277,7 @@
           <p class="text-gray-600">When AI hits cryptic errors or dependency conflicts, it goes in circles. You need someone who actually understands the error messages.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🗣️</span>
@@ -287,7 +287,7 @@
           <p class="text-gray-600">You know what you want but AI keeps missing the mark. Human developers understand context and can ask the right questions.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🧠</span>
@@ -297,7 +297,7 @@
           <p class="text-gray-600">When you need recent APIs, niche libraries, or complex integrations, AI's training data isn't enough. You need current expertise.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🌀</span>
@@ -307,7 +307,7 @@
           <p class="text-gray-600">Your codebase has become an unmaintainable mess. You need someone to refactor and create proper architecture.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🚀</span>
@@ -317,7 +317,7 @@
           <p class="text-gray-600">AI code works in demos but falls apart at scale. You need performance optimization, security, and proper deployment.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all" style="will-change: box-shadow;">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
               <span class="text-2xl">🔍</span>
@@ -425,7 +425,7 @@
           </p>
           <button 
             onclick={() => document.getElementById('waitlist-email')?.focus()}
-            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg cursor-pointer">
+            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg cursor-pointer" style="will-change: transform, background-color;">
             <span class="hidden md:inline">Start fixing AI code now →</span>
             <span class="md:hidden">Get Started →</span>
           </button>

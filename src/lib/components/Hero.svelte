@@ -61,6 +61,8 @@
           src="/chatgpt.png" 
           alt="Developer working on code" 
           class="w-full h-full object-cover"
+          fetchpriority="high"
+          loading="eager"
         />
         <!-- Dark overlay for text readability -->
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent lg:bg-gradient-to-r lg:from-gray-900/90 lg:via-gray-900/70 lg:to-transparent"></div>
@@ -86,7 +88,7 @@
                 <div class="flex rounded-full bg-gray-700/50 p-1 mb-4 md:mb-6">
                   <button
                     onclick={() => role = 'client'}
-                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'client' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}"
+                    class="flex-1 py-2 md:py-3 px-4 md:px-6 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer {role === 'client' ? 'bg-white text-gray-900' : 'text-gray-300 hover:text-white'}" style="will-change: background-color, color;"
                   >
                     I need developers
                   </button>
@@ -106,16 +108,16 @@
                     bind:value={email}
                     placeholder="Enter your email"
                     required
-                    class="w-full px-4 md:px-6 py-3 md:py-4 pr-28 md:pr-32 rounded-full text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-base md:text-lg transition-all"
+                    class="w-full px-4 md:px-6 py-3 md:py-4 pr-28 md:pr-32 rounded-full text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-base md:text-lg transition-all" style="will-change: border-color, box-shadow;"
                   />
                   
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    class="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors cursor-pointer"
+                    class="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors cursor-pointer" style="will-change: background-color;"
                   >
                     {#if isSubmitting}
-                      <svg class="animate-spin h-4 md:h-5 w-4 md:w-5" fill="none" viewBox="0 0 24 24">
+                      <svg class="animate-spin h-4 md:h-5 w-4 md:w-5" fill="none" viewBox="0 0 24 24" style="will-change: transform;">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>

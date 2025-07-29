@@ -14,7 +14,7 @@
   }
 </script>
 
-<div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+<div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-shadow" style="will-change: box-shadow;">
   <div class="flex justify-between items-start mb-4">
     <div>
       <div class="flex items-center gap-2 mb-1">

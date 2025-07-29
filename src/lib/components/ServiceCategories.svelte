@@ -78,7 +78,7 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       {#each categories as category}
         <a href="/developers?category={encodeURIComponent(category.title)}" class="group text-center">
-          <div class="{category.color} mb-4 transition-transform group-hover:scale-110">
+          <div class="{category.color} mb-4 transition-transform group-hover:scale-110" style="will-change: transform;">
             {@html category.icon}
           </div>
           <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
