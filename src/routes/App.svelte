@@ -26,7 +26,7 @@
 
 <div class="min-h-screen bg-white">
   <!-- Header -->
-  <header class="border-b border-gray-200 bg-white">
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
     <div class="px-4 md:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto flex justify-between items-center h-14 md:h-16">
         <div class="flex items-center">
@@ -48,10 +48,12 @@
               <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">Log out</button>
             </form>
           {:else}
-            <a href="#hero" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base">
+            <button 
+              onclick={() => document.getElementById('waitlist-email')?.focus()}
+              class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-6 py-2 md:py-2.5 rounded-lg font-medium transition-colors text-sm md:text-base">
               <span class="hidden md:inline">Start fixing AI code now →</span>
               <span class="md:hidden">Get Started</span>
-            </a>
+            </button>
           {/if}
         </div>
       </div>
@@ -311,10 +313,12 @@
           <p class="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
             From quick fixes to complete rebuilds
           </p>
-          <a href="#hero" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg">
+          <button 
+            onclick={() => document.getElementById('waitlist-email')?.focus()}
+            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all transform hover:scale-105 shadow-lg">
             <span class="hidden md:inline">Start fixing AI code now →</span>
             <span class="md:hidden">Get Started →</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>
