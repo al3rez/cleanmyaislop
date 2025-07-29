@@ -37,9 +37,7 @@
             <Logo size="medium" />
           </div>
           <nav class="hidden lg:flex items-center space-x-8 ml-12">
-            <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Find Talent</a>
-            <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How It Works</a>
-            <a href="#for-developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">For Developers</a>
+            <a href="/developers" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Developer Directory</a>
           </nav>
         </div>
         <div class="flex items-center gap-2 md:gap-4">
@@ -307,7 +305,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-xl md:shadow-2xl p-8 md:p-12 lg:p-16">
         <div class="relative z-10 text-center">
-          <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 tracking-tight">
             Find developers who actually fix your AI slop
           </h2>
           <p class="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
@@ -333,7 +331,7 @@
             Hire the best developers who clean up your AI slop
           </p>
           <p class="text-gray-500 text-xs">
-            © 2025 CleanAISlop. We clean what AI breaks.
+            Copyright © 2025 - All rights reserved
           </p>
         </div>
         

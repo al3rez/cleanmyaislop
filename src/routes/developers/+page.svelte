@@ -93,7 +93,25 @@
   }
 </script>
 
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-gray-50 relative">
+  <!-- Coming Soon Overlay -->
+  <div class="absolute inset-0 bg-white/95 backdrop-blur-sm z-50 flex items-center justify-center">
+    <div class="text-center max-w-md mx-auto p-8">
+      <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+      </div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Developer Directory Coming Soon</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        We're manually vetting our first batch of developers to ensure quality. Join the waitlist to get early access!
+      </p>
+      <a href="/#hero" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+        Join Waitlist →
+      </a>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

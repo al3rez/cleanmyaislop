@@ -15,7 +15,7 @@
 
 <div class="flex items-center gap-1">
   <div 
-    class="{size === 'small' ? 'h-8 w-8' : size === 'medium' ? 'h-10 w-10' : 'h-12 w-12'}"
+    class="{size === 'small' ? 'h-10 w-10' : size === 'medium' ? 'h-10 w-10' : 'h-12 w-12'}"
   >
     {@html aislopSvg}
   </div>
