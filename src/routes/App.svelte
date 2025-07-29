@@ -226,65 +226,64 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🔄</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">AI gets stuck on errors</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">"It worked in the demo"</h3>
-          <p class="text-gray-600">AI code that breaks the moment real users touch it. Race conditions, edge cases, and state management nightmares.</p>
+          <p class="text-gray-600">When AI hits cryptic errors or dependency conflicts, it goes in circles. You need someone who actually understands the error messages.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🗣️</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Can't translate vision to code</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">"Looks good, works bad"</h3>
-          <p class="text-gray-600">Beautifully formatted code that completely misses the business logic. Perfect syntax, wrong implementation.</p>
+          <p class="text-gray-600">You know what you want but AI keeps missing the mark. Human developers understand context and can ask the right questions.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🧠</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Hit the AI knowledge limit</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Can't scale past MVP</h3>
-          <p class="text-gray-600">Hardcoded everything. No proper architecture. Falls apart when you need to add features or handle more users.</p>
+          <p class="text-gray-600">When you need recent APIs, niche libraries, or complex integrations, AI's training data isn't enough. You need current expertise.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🌀</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Lost in complexity</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Performance disasters</h3>
-          <p class="text-gray-600">Infinite re-renders, memory leaks, and O(n³) algorithms. Your app slows to a crawl with real data.</p>
+          <p class="text-gray-600">Your codebase has become an unmaintainable mess. You need someone to refactor and create proper architecture.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"/>
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🚀</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Need production-ready code</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Platform lock-in</h3>
-          <p class="text-gray-600">Stuck on Replit or v0 with no clear path to real hosting. Vendor-specific code everywhere.</p>
+          <p class="text-gray-600">AI code works in demos but falls apart at scale. You need performance optimization, security, and proper deployment.</p>
         </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"/>
-            </svg>
+        <div class="bg-white p-8 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)] transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🔍</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Quality control needed</h3>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Security nightmares</h3>
-          <p class="text-gray-600">API keys in frontend code. No input validation. SQL injection waiting to happen. Amateur hour security.</p>
+          <p class="text-gray-600">You suspect your AI-generated code has issues but can't identify them. Expert code review saves you from future disasters.</p>
         </div>
       </div>
     </div>
