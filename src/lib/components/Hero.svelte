@@ -40,7 +40,7 @@
         <div class="px-6 py-12 lg:px-8 lg:py-20 xl:py-32 lg:max-w-7xl">
           <div class="lg:max-w-xl">
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight text-pretty tracking-tight relative">
-              Hire the best developers who clean up your 
+              Hire the best developers who clean your 
               <span class="text-emerald-400" aria-label="AI slop">⟨AI slop⟩</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
