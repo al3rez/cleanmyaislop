@@ -54,7 +54,7 @@
 <section id="hero" class="relative lg:py-8 xl:py-12 lg:bg-gradient-to-b lg:from-white lg:to-white">
   <div class="lg:px-6 xl:px-8 lg:max-w-7xl lg:mx-auto">
     <!-- Mobile: Full-width, Desktop: Centered with rounded corners -->
-    <div class="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden lg:rounded-3xl lg:shadow-2xl">
+    <div class="relative min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] overflow-hidden lg:rounded-3xl lg:shadow-2xl">
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img 
@@ -68,7 +68,7 @@
       
       <!-- Content -->
       <div class="relative z-10 h-full flex flex-col justify-center">
-        <div class="px-6 py-12 lg:px-8 lg:py-20 xl:py-32 lg:max-w-7xl">
+        <div class="px-6 py-8 lg:px-8 lg:py-12 xl:py-16 lg:max-w-7xl">
           <div class="lg:max-w-xl">
             <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight text-balance tracking-tight relative">
               Hire the best developers who clean your 
@@ -79,7 +79,7 @@
             </p>
         
           <!-- Waitlist Box -->
-          <div class="bg-gray-800/60 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 min-h-[320px] md:min-h-[380px] flex flex-col justify-center">
+          <div class="bg-gray-800/60 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 min-h-[280px] md:min-h-[320px] flex flex-col justify-center">
             {#if !isSubmitted}
               <div class="w-full">
                 <!-- Toggle Tabs -->
