@@ -5,6 +5,7 @@
   let currentLineIndex = 0;
   let showCursor = true;
   let isShowingMessy = true;
+  let codeContainer: HTMLDivElement;
   
   const messyCode = [
     '// AI-generated code problems:',
@@ -76,31 +77,43 @@
     isShowingMessy = true;
     codeLines = [];
     
-    // Typewriter effect for adding lines
-    const typewriterInterval = setInterval(() => {
-      const sourceCode = isShowingMessy ? messyCode : cleanCode;
-      
-      if (currentLineIndex < sourceCode.length) {
-        codeLines = [...codeLines, sourceCode[currentLineIndex]];
-        currentLineIndex++;
-      } else {
-        // Clear and switch to clean code
-        if (isShowingMessy) {
-          setTimeout(() => {
-            codeLines = [];
-            currentLineIndex = 0;
-            isShowingMessy = false;
-          }, 2000);
+    let typewriterInterval: number;
+    
+    const startTypewriter = () => {
+      // Typewriter effect for adding lines
+      typewriterInterval = setInterval(() => {
+        const sourceCode = isShowingMessy ? messyCode : cleanCode;
+        
+        if (currentLineIndex < sourceCode.length) {
+          codeLines = [...codeLines, sourceCode[currentLineIndex]];
+          currentLineIndex++;
+          
+          // Auto-scroll to bottom as we type
+          if (codeContainer) {
+            requestAnimationFrame(() => {
+              codeContainer.scrollTop = codeContainer.scrollHeight;
+            });
+          }
         } else {
-          // Restart the cycle
-          setTimeout(() => {
-            codeLines = [];
-            currentLineIndex = 0;
-            isShowingMessy = true;
-          }, 3000);
-        }
+        // Stop adding lines
+        clearInterval(typewriterInterval);
+        
+        // Wait a bit before switching to next example
+        setTimeout(() => {
+          codeLines = [];
+          currentLineIndex = 0;
+          isShowingMessy = !isShowingMessy;
+          if (codeContainer) codeContainer.scrollTop = 0;
+          
+          // Restart the typewriter
+          startTypewriter();
+        }, 3000); // Show complete code for 3 seconds
       }
     }, 100);
+    };
+    
+    // Start the animation
+    startTypewriter();
     
     // Cursor blink
     const cursorInterval = setInterval(() => {
@@ -126,7 +139,7 @@
     </div>
     
     <!-- Code content -->
-    <div class="p-4 font-mono text-sm h-[350px] overflow-y-auto">
+    <div bind:this={codeContainer} class="p-4 font-mono text-sm h-[350px] overflow-y-auto" style="scroll-behavior: auto;">
       <div class="space-y-1" style="will-change: contents;">
         {#each codeLines as line, i}
           <div class="text-gray-300 whitespace-pre">
@@ -168,7 +181,7 @@
   {/if}
   
   {#if !isShowingMessy && codeLines.length > 0}
-    <div class="absolute bottom-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
+    <div class="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce" style="will-change: transform;">
       Human Verified ✓
     </div>
   {/if}
