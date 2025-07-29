@@ -36,8 +36,8 @@
       </div>
       
       <!-- Content -->
-      <div class="relative z-10 h-full flex flex-col justify-end lg:justify-center">
-        <div class="px-6 pb-8 lg:px-8 lg:py-20 xl:py-32 lg:max-w-7xl">
+      <div class="relative z-10 h-full flex flex-col justify-center">
+        <div class="px-6 py-12 lg:px-8 lg:py-20 xl:py-32 lg:max-w-7xl">
           <div class="lg:max-w-xl">
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight text-pretty tracking-tight">
               Hire the best developers who clean up your <span class="text-emerald-400">AI slop</span>
