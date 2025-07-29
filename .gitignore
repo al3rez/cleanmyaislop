@@ -22,3 +22,4 @@ wrangler.toml
 .test-tmp
 symlink-from
 .idea/
+neon_db_creds

@@ -1,19 +1,50 @@
 <script lang="ts">
+  import { Turnstile } from 'svelte-turnstile';
+  import { env } from '$env/dynamic/public';
+  
+  const PUBLIC_TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  
   let role: 'client' | 'developer' = $state('client');
   let email = $state('');
   let isSubmitting = $state(false);
   let isSubmitted = $state(false);
+  let error = $state('');
+  let turnstileToken = $state('');
+
+  function onTurnstileCallback(token: { detail: { token: string } }) {
+    turnstileToken = token.detail.token;
+  }
 
   async function handleSubmit(event: Event) {
     event.preventDefault();
+    error = '';
     
     if (!email.trim()) return;
     
     isSubmitting = true;
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      // In production: await fetch('/api/waitlist', { email, role })
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          role,
+          turnstileToken
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        error = data.error || 'Something went wrong';
+        return;
+      }
+
       isSubmitted = true;
+    } catch (err) {
+      error = 'Network error. Please try again.';
     } finally {
       isSubmitting = false;
     }
@@ -92,6 +123,22 @@
                   {/if}
                 </button>
               </form>
+            
+              {#if error}
+                <div class="mt-3 text-red-400 text-sm text-center">
+                  {error}
+                </div>
+              {/if}
+
+              {#if PUBLIC_TURNSTILE_SITE_KEY}
+                <div class="mt-4 flex justify-center">
+                  <Turnstile
+                    siteKey={PUBLIC_TURNSTILE_SITE_KEY}
+                    on:callback={onTurnstileCallback}
+                    theme="dark"
+                  />
+                </div>
+              {/if}
             
               <div class="text-center mt-3 md:mt-4">
                 <p class="text-gray-400 text-xs md:text-sm">

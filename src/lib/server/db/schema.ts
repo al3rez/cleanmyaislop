@@ -7,6 +7,17 @@ export const projectStatusEnum = pgEnum('project_status', ['draft', 'open', 'in_
 export const proposalStatusEnum = pgEnum('proposal_status', ['pending', 'accepted', 'rejected', 'withdrawn']);
 export const platformEnum = pgEnum('platform', ['replit', 'lovable', 'v0', 'cursor', 'other']);
 
+// Waitlist table
+export const waitlist = pgTable('waitlist', {
+  id: serial('id').primaryKey(),
+  email: varchar('email', { length: 256 }).notNull(),
+  role: userRoleEnum('role').notNull().default('client'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  ipAddress: varchar('ip_address', { length: 45 }),
+  userAgent: text('user_agent'),
+  referrer: varchar('referrer', { length: 512 })
+});
+
 // Users table
 export const users = pgTable('users', {
   id: serial('id').primaryKey(),
